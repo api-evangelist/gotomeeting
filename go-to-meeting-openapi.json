@@ -1,0 +1,1395 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Go To Meeting",
+        "description": "<br>The GoToMeeting API provides seamless integration of GoToMeeting provisioning and meeting management into your existing infrastructure or third party applications.<br><br>For customers, the ability to add, suspend or delete an organizer in your GoToMeeting Corporate account from within your primary management systems simplifies and streamlines the entire process of account management. The ability to monitor meeting schedules, history and active meeting status allows managers to leverage GoToMeeting activities through your primary applications.<br><br>For third parties, the ability to create, update or delete a meeting from within your application makes real-time collaboration possible for your customers. The ability to update meeting schedules, view history and scheduled meetings, and view attendees from past meetings allows you to enhance your users' experience and the value of your applications.",
+        "termsOfService": "https:\/\/developer.citrixonline.com\/terms-use"
+    },
+    "servers": [
+        "httpsapi.citrixonline.com\/G2M\/rest"
+    ],
+    "paths": {
+        "\/groups": {
+            "get": {
+                "summary": "Get groups",
+                "description": "List all groups for an account. This API call is only available to users with the admin role.",
+                "operationId": "ListAllGroupsForAnAccountThisApiCallIsOnlyAvailableToUsersWithTheAdminRole",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/groups\/{groupKey}\/attendees": {
+            "get": {
+                "summary": "Get attendees by group",
+                "description": "Returns all attendees for all meetings within specified date range held by organizers within the specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
+                "operationId": "ReturnsAllAttendeesForAllMeetingsWithinSpecifiedDateRangeHeldByOrganizersWithinTheSpe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z"
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z"
+                    }
+                ]
+            }
+        },
+        "\/groups\/{groupKey}\/historicalMeetings": {
+            "get": {
+                "summary": "Get historical meetings by group",
+                "description": "Get historical meetings for the specified group that started within the specified date\/time range. This API call is only available to users with the admin role. This API call is restricted to groups with a maximum of 50 organizers. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
+                "operationId": "GetHistoricalMeetingsForTheSpecifiedGroupThatStartedWithinTheSpecifiedDatetimeRangeTh",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z"
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z"
+                    }
+                ]
+            }
+        },
+        "\/groups\/{groupKey}\/meetings": {
+            "get": {
+                "summary": "DEPRECATED: Get historical meetings by group",
+                "description": "DEPRECATED: Please use the new API calls 'Get historical meetings by group' and 'Get upcoming meetings by group'. Get meetings for a specified group. Additional filters can be used to view only meetings within a specified date range. This API call is only available to users with the admin role.",
+                "operationId": "DeprecatedPleaseUseTheNewApiCallsGetHistoricalMeetingsByGroupAndGetUpcomingMeetingsB",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "history",
+                        "in": "query",
+                        "description": "When 'true', returns all past meetings within date range"
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z"
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z"
+                    }
+                ]
+            }
+        },
+        "\/groups\/{groupKey}\/organizers": {
+            "get": {
+                "summary": "Get organizers by group",
+                "description": "Returns all the organizers within a specific group. This API call is only available to users with the admin role.",
+                "operationId": "ReturnsAllTheOrganizersWithinASpecificGroupThisApiCallIsOnlyAvailableToUsersWithTh",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Create organizer in group",
+                "description": "Creates a new organizer and sends an email to the email address defined in request. This API call is only available to users with the admin role. You may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType variables, creating organizers for those products. A G2W or G2T organizer will also have access to G2M.",
+                "operationId": "CreatesANewOrganizerAndSendsAnEmailToTheEmailAddressDefinedInRequestThisApiCallIs",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the organizer to be created"
+                    }
+                ]
+            }
+        },
+        "\/groups\/{groupKey}\/upcomingMeetings": {
+            "get": {
+                "summary": "Get upcoming meetings by group",
+                "description": "Get upcoming meetings for a specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
+                "operationId": "GetUpcomingMeetingsForASpecifiedGroupThisApiCallIsOnlyAvailableToUsersWithTheAdmin",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/historicalMeetings": {
+            "get": {
+                "summary": "Get historical meetings",
+                "description": "Get historical meetings for the currently authenticated organizer that started within the specified date\/time range. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
+                "operationId": "GetHistoricalMeetingsForTheCurrentlyAuthenticatedOrganizerThatStartedWithinTheSpecified",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z"
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z"
+                    }
+                ]
+            }
+        },
+        "\/meetings": {
+            "get": {
+                "summary": "DEPRECATED: Get historical meetings",
+                "description": "DEPRECATED: Please use the new API calls 'Get historical meetings' and 'Get upcoming meetings'.  Gets historical meetings for the current authenticated organizer. Requires date range for filtering results to only meetings within specified dates. History searches will contain the parameter 'meetingInstanceKey' which is used in conjunction with the call 'Get Attendees by Meeting' to get attendee information for a past meeting.",
+                "operationId": "DeprecatedPleaseUseTheNewApiCallsGetHistoricalMeetingsAndGetUpcomingMeetingsGetsHis",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "history",
+                        "in": "query",
+                        "description": "When 'true', returns all past meetings within date range"
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z"
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create meeting",
+                "description": "Create a new meeting based on the parameters specified.",
+                "operationId": "CreateANewMeetingBasedOnTheParametersSpecified",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the organizer to be created"
+                    }
+                ]
+            }
+        },
+        "\/meetings\/{meetingId}": {
+            "delete": {
+                "summary": "Delete meeting",
+                "description": "Deletes the meeting identified by the meetingId.",
+                "operationId": "DeletesTheMeetingIdentifiedByTheMeetingid",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "get": {
+                "summary": "Get meeting",
+                "description": "Returns the meeting details for the specified meeting.",
+                "operationId": "ReturnsTheMeetingDetailsForTheSpecifiedMeeting",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "put": {
+                "summary": "Update meeting",
+                "description": "Updates an existing meeting specified by meetingId.",
+                "operationId": "UpdatesAnExistingMeetingSpecifiedByMeetingid",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the organizer to be created"
+                    }
+                ]
+            }
+        },
+        "\/meetings\/{meetingId}\/attendees": {
+            "get": {
+                "summary": "Get attendees by meeting",
+                "description": "List all attendees for specified meetingId of historical meeting. The historical meetings can be fetched using 'Get historical meetings', 'Get historical meetings by organizer', and 'Get historical meetings by group'. For users with the admin role this call returns attendees for any meeting. For any other user the call will return attendees for meetings on which the user is a valid organizer.",
+                "operationId": "ListAllAttendeesForSpecifiedMeetingidOfHistoricalMeetingTheHistoricalMeetingsCanBeFet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "meetingId",
+                        "in": "path",
+                        "description": "The meeting ID"
+                    }
+                ]
+            }
+        },
+        "\/meetings\/{meetingId}\/start": {
+            "get": {
+                "summary": "Start meeting",
+                "description": "Returns a host URL that can be used to start a meeting. When this URL is opened in a web browser, the GoToMeeting client will be downloaded and launched and the meeting will start. The end user is not required to login to a client.",
+                "operationId": "ReturnsAHostUrlThatCanBeUsedToStartAMeetingWhenThisUrlIsOpenedInAWebBrowserThe",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers": {
+            "delete": {
+                "summary": "Delete organizer by email",
+                "description": "Deletes the individual organizer specified by the email address. This API call is only available to users with the admin role.",
+                "operationId": "DeletesTheIndividualOrganizerSpecifiedByTheEmailAddressThisApiCallIsOnlyAvailableTo",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "The email address of the organizer"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "Get organizer by email \/ Get all organizers",
+                "description": "Gets the individual organizer specified by the organizer's email address. If an email address is not specified, all organizers are returned. This API call is only available to users with the admin role.",
+                "operationId": "GetsTheIndividualOrganizerSpecifiedByTheOrganizersEmailAddressIfAnEmailAddressIsNot",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "The email address of the organizer"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create organizer",
+                "description": "Creates a new organizer and sends an email to the email address defined in the request. This API call is only available to users with the admin role. You may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType variables, creating organizers for those products. A G2W or G2T organizer will also have access to G2M.",
+                "operationId": "CreatesANewOrganizerAndSendsAnEmailToTheEmailAddressDefinedInTheRequestThisApiCal",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the organizer to be created"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}": {
+            "delete": {
+                "summary": "Delete organizer",
+                "description": "Deletes the individual organizer specified by the organizer key. This API call is only available to users with the admin role.",
+                "operationId": "DeletesTheIndividualOrganizerSpecifiedByTheOrganizerKeyThisApiCallIsOnlyAvailableTo",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "get": {
+                "summary": "Get organizer",
+                "description": "Returns the individual organizer specified by the key. This API call is only available to users with the admin role. Non-admin users can only make this call for their own organizerKey.",
+                "operationId": "ReturnsTheIndividualOrganizerSpecifiedByTheKeyThisApiCallIsOnlyAvailableToUsersWith",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "put": {
+                "summary": "Update organizer",
+                "description": "Updates the products of the specified organizer. To add a product (G2M, G2W, G2T, OPENVOICE) for the organizer, the call must be sent once for each product you want to add. To remove all products for the organizer, set status to 'suspended'. The call is limited to users with the admin role.",
+                "operationId": "UpdatesTheProductsOfTheSpecifiedOrganizerToAddAProductG2mG2wG2tOpenvoiceForTheOrga",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the organizer to be created"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/attendees": {
+            "get": {
+                "summary": "Get attendees by organizer",
+                "description": "Lists all attendees for all meetings within a specified date range for a specified organizer. This API call is only available to users with the admin role.",
+                "operationId": "ListsAllAttendeesForAllMeetingsWithinASpecifiedDateRangeForASpecifiedOrganizerThisA",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z"
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/historicalMeetings": {
+            "get": {
+                "summary": "Get historical meetings by organizer",
+                "description": "Get historical meetings for the specified organizer that started within the specified date\/time range. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
+                "operationId": "GetHistoricalMeetingsForTheSpecifiedOrganizerThatStartedWithinTheSpecifiedDatetimeRange",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z"
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/meetings": {
+            "get": {
+                "summary": "DEPRECATED: Get meetings by organizer",
+                "description": "DEPRECATED: Please use the new API calls 'Get historical meetings by organizer' and 'Get upcoming meetings by organizer'. Gets future (scheduled) or past (history) meetings for a specified organizer. Include 'history=true' and the past start and end dates in the URL to retrieve past meetings. Enter 'scheduled=true' (without dates) to get scheduled meetings.",
+                "operationId": "DeprecatedPleaseUseTheNewApiCallsGetHistoricalMeetingsByOrganizerAndGetUpcomingMeetin",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "scheduled",
+                        "in": "query",
+                        "description": "When 'true', returns all future meetings. Date range not supported."
+                    },
+                    {
+                        "name": "history",
+                        "in": "query",
+                        "description": "When 'true', returns all past meetings within date range"
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z"
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/upcomingMeetings": {
+            "get": {
+                "summary": "Get upcoming meetings by organizer",
+                "description": "Get upcoming meetings for a specified organizer. This API call is only available to users with the admin role.",
+                "operationId": "GetUpcomingMeetingsForASpecifiedOrganizerThisApiCallIsOnlyAvailableToUsersWithTheA",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/upcomingMeetings": {
+            "get": {
+                "summary": "Get upcoming meetings",
+                "description": "Gets upcoming meetings for the current authenticated organizer.",
+                "operationId": "GetsUpcomingMeetingsForTheCurrentAuthenticatedOrganizer",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AttendeeByGroup": {
+                "type": "object",
+                "properties": {
+                    "attendeeEmail": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "attendeeName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "duration": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "groupName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "joinTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "leaveTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingInstanceKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numAttendees": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AttendeeByMeeting": {
+                "type": "object",
+                "properties": {
+                    "attendeeEmail": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "attendeeName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "duration": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "groupName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "joinTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "leaveTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingInstanceKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numAttendees": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AttendeeByOrganizer": {
+                "type": "object",
+                "properties": {
+                    "attendeeEmail": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "attendeeName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "duration": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "groupName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "joinTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "leaveTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingInstanceKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "newMeetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numAttendees": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Group": {
+                "type": "object",
+                "properties": {
+                    "groupName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "groupkey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numOrganizers": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "parentKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "HistoricalMeeting": {
+                "type": "object",
+                "properties": {
+                    "accountKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "duration": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "locale": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numAttendees": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "HistoricalMeetingByGroup": {
+                "type": "object",
+                "properties": {
+                    "accountKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "duration": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "groupName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "locale": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numAttendees": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "HistoryMeetingByGroup": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "duration": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "groupName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingInstanceKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numAttendees": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "MeetingById": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "createTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "duration": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "maxParticipants": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "passwordRequired": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "uniqueMeetingId": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "MeetingByOrganizer": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "createTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "maxParticipants": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "passwordRequired": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "uniqueMeetingId": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "MeetingCreated": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "joinURL": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "maxParticipants": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "uniqueMeetingId": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "MeetingHistory": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "duration": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "groupName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingInstanceKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "newMeetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "newOrganizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numAttendees": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "passwordRequired": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "uniqueMeetingId": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "MeetingReqCreate": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "passwordRequired": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timezonekey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "MeetingReqUpdate": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "passwordRequired": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timezonekey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "MeetingScheduled": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "createTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "maxParticipants": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "passwordRequired": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "uniqueMeetingId": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Organizer": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "groupId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "groupName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "maxNumAttendeesAllowed": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "products": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "OrganizerByGroup": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "groupId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "groupName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "maxNumAttendeesAllowed": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "products": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "OrganizerReq": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerEmail": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "OrganizerShort": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "key": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "OrganizerStatus": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "ScheduledMeetingByGroup": {
+                "type": "object",
+                "properties": {
+                    "attendees": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "groupName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "passwordRequired": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "StartUrl": {
+                "type": "object",
+                "properties": {
+                    "hostURL": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "UpcomingMeeting": {
+                "type": "object",
+                "properties": {
+                    "accountKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "conferenceCallInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "locale": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "passwordRequired": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "UpcomingMeetingByGroup": {
+                "type": "object",
+                "properties": {
+                    "accountKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "groupName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "locale": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "passwordRequired": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
