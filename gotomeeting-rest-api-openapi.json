@@ -1,0 +1,1274 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "GoToMeeting REST API",
+        "description": "<br \/>The Citrix GoToMeeting API provides seamless integration of GoToMeeting provisioning and meeting management into your existing infrastructure or third party applications.<br \/><br \/>For customers, the ability to add, suspend or delete an organizer in your GoToMeeting Corporate account from within your primary management systems simplifies and streamlines the entire process of account management. The ability to monitor meeting schedules, history and active meeting status allows managers to leverage GoToMeeting activities through your primary applications.<br \/><br \/>For third parties, the ability to create, update or delete a meeting from within your application makes real-time collaboration possible for your customers. The ability to update meeting schedules, view history and scheduled meetings, and view attendees from past meetings allows you to enhance your users' experience and the value of your applications.",
+        "termsOfService": "https:\/\/developer.citrixonline.com\/terms-use"
+    },
+    "servers": [
+        "http:\/\/api.citrixonline.com\/G2M\/rest"
+    ],
+    "paths": {
+        "\/groups": {
+            "get": {
+                "summary": "Get groups",
+                "description": "List all groups for an account. This API call is only available to users with the admin role.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/groups\/{groupKey}\/attendees": {
+            "get": {
+                "summary": "Get attendees by group",
+                "description": "Returns all attendees for all meetings within specified date range held by organizers within the specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "groupKey",
+                        "in": "path",
+                        "description": "The key of the group. Only groups with maximum 50 organizers are supported"
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z"
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/groups\/{groupKey}\/historicalMeetings": {
+            "get": {
+                "summary": "Get historical meetings by group",
+                "description": "Get historical meetings for a specified group within a specified date range. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "groupKey",
+                        "in": "path",
+                        "description": "The key of the group. Only groups with maximum 50 organizers are supported"
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z"
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/groups\/{groupKey}\/meetings": {
+            "get": {
+                "summary": "DEPRECATED: Get historical meetings by group",
+                "description": "DEPRECATED: Please use the new API calls \"Get historical meetings by group\" and \"Get upcoming meetings by group\". Get meetings for a specified group. Additional filters can be used to view only meetings within a specified date range. This API call is only available to users with the admin role.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "groupKey",
+                        "in": "path",
+                        "description": "The key of the group. Only groups with maximum 50 organizers are supported"
+                    },
+                    {
+                        "name": "history",
+                        "in": "query",
+                        "description": "When \"true\" returns all past meetings within date range"
+                    },
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z"
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/groups\/{groupKey}\/organizers": {
+            "get": {
+                "summary": "Get organizers by group",
+                "description": "Returns all the organizers within a specific group. This API call is only available to users with the admin role.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "groupKey",
+                        "in": "path",
+                        "description": "The key of the group. Only groups with maximum 50 organizers are supported"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create organizer in group",
+                "description": "Creates a new organizer and sends an email to the email address defined in request. This API call is only available to users with the admin role. You may also pass \"G2W\" or \"G2T\" or \"OPENVOICE\" as productType variables, creating organizers for those products. A G2W or G2T organizer will also have access to G2M.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "groupKey",
+                        "in": "path",
+                        "description": "The key of the group. Only groups with maximum 50 organizers are supported"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AttendeeByGroup": {
+                "type": "object",
+                "properties": {
+                    "attendeeEmail": {
+                        "description": "The attendee's email address",
+                        "type": "string"
+                    },
+                    "attendeeName": {
+                        "description": "The full name of the attendee",
+                        "type": "string"
+                    },
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "duration": {
+                        "description": "The duration of attendance in minutes",
+                        "type": "integer"
+                    },
+                    "email": {
+                        "description": "The email address of the meeting organizer",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The first name of the organizer of the attended meeting",
+                        "type": "string"
+                    },
+                    "groupName": {
+                        "description": "The name of the group",
+                        "type": "string"
+                    },
+                    "joinTime": {
+                        "description": "The time the attendee joined the meeting instance",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The surname of the meeting organizer",
+                        "type": "string"
+                    },
+                    "leaveTime": {
+                        "description": "The time the attendee left the meeting instance",
+                        "type": "string"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "string"
+                    },
+                    "meetingInstanceKey": {
+                        "description": "The key of the attended meeting instance",
+                        "type": "integer"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "numAttendees": {
+                        "description": "The number of attendees at the attended meeting instance",
+                        "type": "integer"
+                    },
+                    "organizerkey": {
+                        "description": "The key of the meeting organizer. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    },
+                    "organizerKey": {
+                        "description": "The key of the meeting organizer",
+                        "type": "string"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    }
+                }
+            },
+            "AttendeeByMeeting": {
+                "type": "object",
+                "properties": {
+                    "attendeeEmail": {
+                        "description": "The attendee's email address",
+                        "type": "string"
+                    },
+                    "attendeeName": {
+                        "description": "The full name of the attendee",
+                        "type": "string"
+                    },
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "duration": {
+                        "description": "The duration of attendance in minutes",
+                        "type": "integer"
+                    },
+                    "email": {
+                        "description": "The email address of the meeting organizer",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The first name of the organizer of the attended meeting",
+                        "type": "string"
+                    },
+                    "groupName": {
+                        "description": "The name of the group",
+                        "type": "string"
+                    },
+                    "joinTime": {
+                        "description": "The time the attendee joined the meeting instance",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The surname of the meeting organizer",
+                        "type": "string"
+                    },
+                    "leaveTime": {
+                        "description": "The time the attendee left the meeting instance",
+                        "type": "string"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "integer"
+                    },
+                    "meetingInstanceKey": {
+                        "description": "The key of the attended meeting instance",
+                        "type": "integer"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The attendee's full name",
+                        "type": "string"
+                    },
+                    "numAttendees": {
+                        "description": "The number of attendees at the attended meeting instance",
+                        "type": "integer"
+                    },
+                    "organizerkey": {
+                        "description": "The key of the meeting organizer. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    }
+                }
+            },
+            "AttendeeByOrganizer": {
+                "type": "object",
+                "properties": {
+                    "attendeeEmail": {
+                        "description": "The attendee's email address",
+                        "type": "string"
+                    },
+                    "attendeeName": {
+                        "description": "The full name of the attendee",
+                        "type": "string"
+                    },
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "duration": {
+                        "description": "The duration of attendance in minutes",
+                        "type": "integer"
+                    },
+                    "email": {
+                        "description": "The email address of the meeting organizer",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The first name of the organizer of the attended meeting",
+                        "type": "string"
+                    },
+                    "groupName": {
+                        "description": "The name of the group",
+                        "type": "string"
+                    },
+                    "joinTime": {
+                        "description": "The time the attendee joined the meeting instance",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The surname of the meeting organizer",
+                        "type": "string"
+                    },
+                    "leaveTime": {
+                        "description": "The time the attendee left the meeting instance",
+                        "type": "string"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "integer"
+                    },
+                    "meetingInstanceKey": {
+                        "description": "The key of the attended meeting instance",
+                        "type": "integer"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The attendee's full name",
+                        "type": "string"
+                    },
+                    "newMeetingId": {
+                        "description": "The formatted meeting ID",
+                        "type": "string"
+                    },
+                    "numAttendees": {
+                        "description": "The number of attendees at the attended meeting instance",
+                        "type": "integer"
+                    },
+                    "organizerkey": {
+                        "description": "The key of the meeting organizer. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    }
+                }
+            },
+            "Group": {
+                "type": "object",
+                "properties": {
+                    "groupKey": {
+                        "description": "The key of this group",
+                        "type": "integer"
+                    },
+                    "groupName": {
+                        "description": "The name of the group",
+                        "type": "string"
+                    },
+                    "numOrganizers": {
+                        "description": "The number of organizers assigned to this group",
+                        "type": "integer"
+                    },
+                    "parentKey": {
+                        "description": "The key of the parent group this group belongs to. Identical with the groupKey if this group is not a subgroup",
+                        "type": "integer"
+                    },
+                    "status": {
+                        "description": "The status of this group, i.e. whether the organizers assigned to it are able to host meetings",
+                        "type": "string"
+                    }
+                }
+            },
+            "HistoricalMeeting": {
+                "type": "object",
+                "properties": {
+                    "accountKey": {
+                        "description": "The key of the company account",
+                        "type": "string"
+                    },
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "duration": {
+                        "description": "The duration of the meeting session in minutes",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The email address of the meeting organizer",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The first name of the organizer of the attended meeting",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The surname of the meeting organizer",
+                        "type": "string"
+                    },
+                    "locale": {
+                        "description": "The current language setting of the organizer in the web portal",
+                        "type": "string"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "string"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "numAttendees": {
+                        "description": "The number of attendees at the meeting instance",
+                        "type": "string"
+                    },
+                    "organizerKey": {
+                        "description": "The key of the meeting organizer",
+                        "type": "string"
+                    },
+                    "sessionId": {
+                        "description": "The ID of the meeting session",
+                        "type": "string"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    }
+                }
+            },
+            "HistoricalMeetingByGroup": {
+                "type": "object",
+                "properties": {
+                    "accountKey": {
+                        "description": "The key of the company account",
+                        "type": "string"
+                    },
+                    "duration": {
+                        "description": "The duration of the meeting session in minutes",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The email address of the meeting organizer",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The first name of the organizer of the attended meeting",
+                        "type": "string"
+                    },
+                    "groupName": {
+                        "description": "The name of the group",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The surname of the meeting organizer",
+                        "type": "string"
+                    },
+                    "locale": {
+                        "description": "The current language setting of the organizer in the web portal",
+                        "type": "string"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "string"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "numAttendees": {
+                        "description": "The number of attendees at the meeting instance",
+                        "type": "string"
+                    },
+                    "organizerKey": {
+                        "description": "The key of the meeting organizer",
+                        "type": "string"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    }
+                }
+            },
+            "HistoryMeetingByGroup": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "duration": {
+                        "description": "The duration of the meeting session in minutes",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The email address of the meeting organizer",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The first name of the organizer of the attended meeting",
+                        "type": "string"
+                    },
+                    "groupName": {
+                        "description": "The name of the group",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The surname of the meeting organizer",
+                        "type": "string"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "string"
+                    },
+                    "meetingInstanceKey": {
+                        "description": "The key of the attended meeting instance",
+                        "type": "integer"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "numAttendees": {
+                        "description": "The number of attendees at the attended meeting instance",
+                        "type": "integer"
+                    },
+                    "organizerkey": {
+                        "description": "The key of the meeting organizer. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    },
+                    "organizerKey": {
+                        "description": "The key of the meeting organizer",
+                        "type": "string"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    }
+                }
+            },
+            "MeetingById": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "createTime": {
+                        "description": "DEPRECATED. Returns an empty string \"\"",
+                        "type": "string"
+                    },
+                    "duration": {
+                        "description": "The duration of attendance in minutes",
+                        "type": "integer"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "maxParticipants": {
+                        "description": "The maximum number of participants allowed at the meeting",
+                        "type": "integer"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "integer"
+                    },
+                    "meetingKey": {
+                        "description": "The meeting ID. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "passwordRequired": {
+                        "description": "Indicates whether a password is required to join the meeting",
+                        "type": "boolean"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of this group, i.e. whether the organizers assigned to it are able to host meetings",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    },
+                    "uniqueMeetingId": {
+                        "description": "The meeting ID. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    }
+                }
+            },
+            "MeetingByOrganizer": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "createTime": {
+                        "description": "DEPRECATED. Returns an empty string \"\"",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "maxParticipants": {
+                        "description": "The maximum number of participants allowed at the meeting",
+                        "type": "integer"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "integer"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "passwordRequired": {
+                        "description": "Indicates whether a password is required to join the meeting",
+                        "type": "boolean"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of this group, i.e. whether the organizers assigned to it are able to host meetings",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    },
+                    "uniqueMeetingId": {
+                        "description": "The meeting ID. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    }
+                }
+            },
+            "MeetingCreated": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "joinURL": {
+                        "description": "The URL the meeting participants will use to join the meeting",
+                        "type": "string"
+                    },
+                    "maxParticipants": {
+                        "description": "The maximum number of participants allowed at the meeting",
+                        "type": "integer"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "integer"
+                    },
+                    "uniqueMeetingId": {
+                        "description": "The meeting ID. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    }
+                }
+            },
+            "MeetingHistory": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "date": {
+                        "description": "The time the meeting instance started. Field retained for backwards compatibility reasons",
+                        "type": "string"
+                    },
+                    "duration": {
+                        "description": "The duration of attendance in minutes",
+                        "type": "integer"
+                    },
+                    "email": {
+                        "description": "The email address of the meeting organizer",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The first name of the organizer of the attended meeting",
+                        "type": "string"
+                    },
+                    "groupName": {
+                        "description": "The name of the group",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The surname of the meeting organizer",
+                        "type": "string"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "integer"
+                    },
+                    "meetingInstanceKey": {
+                        "description": "The key of the attended meeting instance",
+                        "type": "integer"
+                    },
+                    "meetingKey": {
+                        "description": "The meeting ID. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "newMeetingId": {
+                        "description": "The formatted meeting ID",
+                        "type": "string"
+                    },
+                    "newOrganizerKey": {
+                        "description": "The key of the meeting organizer. Field introduced for compatibility reasons",
+                        "type": "string"
+                    },
+                    "numAttendees": {
+                        "description": "The number of attendees at the attended meeting instance",
+                        "type": "integer"
+                    },
+                    "organizerKey": {
+                        "description": "The key of the meeting organizer",
+                        "type": "string"
+                    },
+                    "passwordRequired": {
+                        "description": "Indicates whether a password is required to join the meeting",
+                        "type": "boolean"
+                    },
+                    "sessionId": {
+                        "description": "The ID of the meeting session",
+                        "type": "integer"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of this group, i.e. whether the organizers assigned to it are able to host meetings",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    },
+                    "uniqueMeetingId": {
+                        "description": "The meeting ID. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    }
+                }
+            },
+            "MeetingReqCreate": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "passwordRequired": {
+                        "description": "Indicates whether a password is required to join the meeting",
+                        "type": "boolean"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    },
+                    "timezonekey": {
+                        "description": "DEPRECATED. Must be provided and set to empty string \"\"",
+                        "type": "string"
+                    }
+                }
+            },
+            "MeetingReqUpdate": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "passwordRequired": {
+                        "description": "Indicates whether a password is required to join the meeting",
+                        "type": "boolean"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    },
+                    "timezonekey": {
+                        "description": "DEPRECATED. Must be provided and set to empty string \"\"",
+                        "type": "string"
+                    }
+                }
+            },
+            "MeetingScheduled": {
+                "type": "object",
+                "properties": {
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "createTime": {
+                        "description": "DEPRECATED. Returns an empty string \"\"",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "maxParticipants": {
+                        "description": "The maximum number of participants allowed at the meeting",
+                        "type": "integer"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "integer"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "passwordRequired": {
+                        "description": "Indicates whether a password is required to join the meeting",
+                        "type": "boolean"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of this group, i.e. whether the organizers assigned to it are able to host meetings",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    },
+                    "uniqueMeetingId": {
+                        "description": "The meeting ID. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    }
+                }
+            },
+            "Organizer": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "The email address of the meeting organizer",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The first name of the organizer of the attended meeting",
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "description": "The key of the group this organizer is assigned to",
+                        "type": "integer"
+                    },
+                    "groupName": {
+                        "description": "The name of the group",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The surname of the meeting organizer",
+                        "type": "string"
+                    },
+                    "maxNumAttendeesAllowed": {
+                        "description": "The maximum number of attendees allowed at sessions hosted by this organizer.",
+                        "type": "integer"
+                    },
+                    "organizerkey": {
+                        "description": "The key of the meeting organizer. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    },
+                    "products": {
+                        "description": "The products the organizer has access to",
+                        "type": "array"
+                    },
+                    "status": {
+                        "description": "The status of this group, i.e. whether the organizers assigned to it are able to host meetings",
+                        "type": "string"
+                    }
+                }
+            },
+            "products": {
+                "type": "array"
+            },
+            "OrganizerByGroup": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "The email address of the meeting organizer",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The first name of the organizer of the attended meeting",
+                        "type": "string"
+                    },
+                    "groupId": {
+                        "description": "The key of the group this organizer is assigned to",
+                        "type": "integer"
+                    },
+                    "groupName": {
+                        "description": "The name of the group",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The surname of the meeting organizer",
+                        "type": "string"
+                    },
+                    "maxNumAttendeesAllowed": {
+                        "description": "The maximum number of attendees allowed at sessions hosted by this organizer.",
+                        "type": "integer"
+                    },
+                    "organizerkey": {
+                        "description": "The key of the meeting organizer. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    },
+                    "products": {
+                        "description": "The products the organizer has access to",
+                        "type": "array"
+                    },
+                    "status": {
+                        "description": "The status of this group, i.e. whether the organizers assigned to it are able to host meetings",
+                        "type": "string"
+                    }
+                }
+            },
+            "OrganizerReq": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "description": "The first name of the organizer of the attended meeting",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The surname of the meeting organizer",
+                        "type": "string"
+                    },
+                    "organizerEmail": {
+                        "description": "The email address of the organizer",
+                        "type": "string"
+                    },
+                    "productType": {
+                        "description": "The product the organizer has access to",
+                        "type": "string"
+                    }
+                }
+            },
+            "OrganizerShort": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "The email address of the meeting organizer",
+                        "type": "string"
+                    },
+                    "key": {
+                        "description": "The organizer's key",
+                        "type": "integer"
+                    }
+                }
+            },
+            "OrganizerStatus": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "The status of this group, i.e. whether the organizers assigned to it are able to host meetings",
+                        "type": "string"
+                    }
+                }
+            },
+            "ScheduledMeetingByGroup": {
+                "type": "object",
+                "properties": {
+                    "attendees": {
+                        "description": "Not in use.",
+                        "type": "string"
+                    },
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The email address of the meeting organizer",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The first name of the organizer of the attended meeting",
+                        "type": "string"
+                    },
+                    "groupName": {
+                        "description": "The name of the group",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The surname of the meeting organizer",
+                        "type": "string"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "string"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "organizerkey": {
+                        "description": "The key of the meeting organizer. Field retained for backwards compatibility reasons",
+                        "type": "integer"
+                    },
+                    "organizerKey": {
+                        "description": "The key of the meeting organizer",
+                        "type": "string"
+                    },
+                    "passwordRequired": {
+                        "description": "Indicates whether a password is required to join the meeting",
+                        "type": "boolean"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    }
+                }
+            },
+            "StartUrl": {
+                "type": "object",
+                "properties": {
+                    "hostURL": {
+                        "description": "The host URL that can be used to start a meeting.",
+                        "type": "string"
+                    }
+                }
+            },
+            "UpcomingMeeting": {
+                "type": "object",
+                "properties": {
+                    "accountKey": {
+                        "description": "The key of the company account",
+                        "type": "string"
+                    },
+                    "conferenceCallInfo": {
+                        "description": "Audio options for the attended meeting",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The email address of the meeting organizer",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The first name of the organizer of the attended meeting",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The surname of the meeting organizer",
+                        "type": "string"
+                    },
+                    "locale": {
+                        "description": "The current language setting of the organizer in the web portal",
+                        "type": "string"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "string"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "organizerKey": {
+                        "description": "The key of the meeting organizer",
+                        "type": "string"
+                    },
+                    "passwordRequired": {
+                        "description": "Indicates whether a password is required to join the meeting",
+                        "type": "boolean"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of this group, i.e. whether the organizers assigned to it are able to host meetings",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    }
+                }
+            },
+            "UpcomingMeetingByGroup": {
+                "type": "object",
+                "properties": {
+                    "accountKey": {
+                        "description": "The key of the company account",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The email address of the meeting organizer",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "The time the meeting instance ended",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The first name of the organizer of the attended meeting",
+                        "type": "string"
+                    },
+                    "groupName": {
+                        "description": "The name of the group",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The surname of the meeting organizer",
+                        "type": "string"
+                    },
+                    "locale": {
+                        "description": "The current language setting of the organizer in the web portal",
+                        "type": "string"
+                    },
+                    "meetingId": {
+                        "description": "The meeting ID",
+                        "type": "string"
+                    },
+                    "meetingType": {
+                        "description": "The meeting type",
+                        "type": "string"
+                    },
+                    "organizerKey": {
+                        "description": "The key of the meeting organizer",
+                        "type": "string"
+                    },
+                    "passwordRequired": {
+                        "description": "Indicates whether a password is required to join the meeting",
+                        "type": "boolean"
+                    },
+                    "startTime": {
+                        "description": "The time the meeting instance started",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of this group, i.e. whether the organizers assigned to it are able to host meetings",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The subject of the attended meeting",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
