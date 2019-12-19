@@ -1,0 +1,561 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "N\/A",
+        "title": "SCIM",
+        "description": "The SCIM API lets you manage users in your organization. You can then automate the provisioning of product licenses for these users, and they can use your company's Single Sign-On solution through an Identity Provider.",
+        "termsOfService": "https:\/\/developer.citrixonline.com\/terms-use"
+    },
+    "servers": [
+        "httpsapi.citrixonline.com\/identity\/v1"
+    ],
+    "paths": {
+        "\/Groups": {
+            "get": {
+                "summary": "Get Groups",
+                "description": "Queries multiple group identities in the organization domain. Filtering, sorting and pagination are available. This call requires the role ROLE_ORG_READ.",
+                "operationId": "GetGroups",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": " Without a filter, all groups are returned. The filter parameter must be a properly formed SCIM filter using the operator \"eq\" (equals), \"sw\" (starts with), or \"co\" (contains). The filter works for the displayName attribute. Sorting and pagination are supported. For example, GET \/Groups?filter=displayName%20eq%20%22Engineering%22&sortBy=displayName&sortOrder=ascending&count=50&startIndex=51"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create Group",
+                "description": "Creates a new organization group and adds it to the user domain. Member groups and member users must be in the organization. This call requires the role ROLE_ORG_WRITE.",
+                "operationId": "CreateGroup",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the group to create"
+                    }
+                ]
+            }
+        },
+        "\/Groups\/{groupKey}": {
+            "delete": {
+                "summary": "Delete Group",
+                "description": "Deletes a group from the organization (but not from the account). The group must be in the organization. This call requires the role ROLE_ORG_WRITE.",
+                "operationId": "DeleteGroup",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "get": {
+                "summary": "Get Group",
+                "description": "Queries group details in the organization domain. This call requires the role ROLE_ORG_READ.",
+                "operationId": "GetGroup",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "patch": {
+                "summary": "Update Group",
+                "description": "Updates one or more values of an existing group without sending the full definition. Member groups and member users must be in the organization. This call requires the role ROLE_ORG_WRITE.",
+                "operationId": "UpdateGroup",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the group to create"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Replace Group",
+                "description": "Updates an existing group. The request must include the full group definition. To modify one or more values without sending the full definition, see \"Update Group\". Member groups and member users must be in the organization. This call requires the role ROLE_ORG_WRITE.",
+                "operationId": "ReplaceGroup",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the group to create"
+                    }
+                ]
+            }
+        },
+        "\/Schemas\/Users": {
+            "get": {
+                "summary": "Get User Schema",
+                "description": "Queries the user schema. The user schema is defined in SCIM Core Schema (http:\/\/www.simplecloud.info\/specs\/draft-scim-core-schema-01.html#resource-schema).",
+                "operationId": "GetUserSchema",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/ServiceProviderConfigs": {
+            "get": {
+                "summary": "Get Service Provider Configurations",
+                "description": "Queries service provider configurations. The service provider configurations are defined in SCIM Core Schema (http:\/\/www.simplecloud.info\/specs\/draft-scim-core-schema-01.html#anchor6). This call returns a description, a documentationURL, name, and specURL.",
+                "operationId": "GetServiceProviderConfigs",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/Users": {
+            "get": {
+                "summary": "Get Users",
+                "description": "Queries multiple user identities in the organization domain. Filtering is available.",
+                "operationId": "GetUsers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": " Without a filter, all groups are returned. The filter parameter must be a properly formed SCIM filter using the operator \"eq\" (equals), \"sw\" (starts with), or \"co\" (contains). The filter works for the displayName attribute. Sorting and pagination are supported. For example, GET \/Groups?filter=displayName%20eq%20%22Engineering%22&sortBy=displayName&sortOrder=ascending&count=50&startIndex=51"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create User",
+                "description": "Creates a new organization user and adds them to the user domain. The user email domain must match an existing organization email domain.",
+                "operationId": "CreateUsers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the group to create"
+                    }
+                ]
+            }
+        },
+        "\/Users\/me": {
+            "get": {
+                "summary": "Get Current User",
+                "description": "Queries the identity of the current authenticated user.",
+                "operationId": "GetMe",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "patch": {
+                "summary": "Update Current User",
+                "description": "Changes a limited set (or all if you choose) of the current authenticated user's data. The updated user email domain must be an existing organization email domain. ",
+                "operationId": "UpdateMe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the group to create"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Replace Current User",
+                "description": "Changes the current authenticated user's displayName, locale, timezone, username and password. The request must include the full user definition (to modify one or more values without sending the full definition, see Update User). The replaced user email domain must be an existing organization email domain. ",
+                "operationId": "ReplaceMe",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the group to create"
+                    }
+                ]
+            }
+        },
+        "\/Users\/{userKey}": {
+            "delete": {
+                "summary": "Delete User",
+                "description": "Deletes a user from the organization (but not from the account).",
+                "operationId": "DeleteUser",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "get": {
+                "summary": "Get User",
+                "description": "Queries user identity in the organization domain.",
+                "operationId": "GetUser",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "patch": {
+                "summary": "Update User",
+                "description": "Changes a limited set (or all if you choose) of the user's data. The updated user email domain must be an existing organization email domain.",
+                "operationId": "UpdateUser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the group to create"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Replace User",
+                "description": "Changes an existing user's displayName, locale, timezone, username and password. The request must include the full user definition (to modify one or more values without sending the full definition, see Update User). The replaced user email domain must be an existing organization email domain.",
+                "operationId": "ReplaceUser",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the group to create"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AuthenticationSchemes": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "documentationUrl": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "specUrl": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "Bulk": {
+                "type": "object",
+                "properties": {
+                    "supported": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "ChangePassword": {
+                "type": "object",
+                "properties": {
+                    "supported": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "Etag": {
+                "type": "object",
+                "properties": {
+                    "supported": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "Filter": {
+                "type": "object",
+                "properties": {
+                    "supported": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "Group": {
+                "type": "object",
+                "properties": {
+                    "displayName": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "members": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "GroupCollection": {
+                "type": "object",
+                "properties": {
+                    "resources": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "totalResults": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "GroupDefinition": {
+                "type": "object",
+                "properties": {
+                    "displayName": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "members": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "GroupMetadata": {
+                "type": "object",
+                "properties": {
+                    "created": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "location": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "Member": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "Patch": {
+                "type": "object",
+                "properties": {
+                    "supported": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "ResourceSchema": {
+                "type": "object",
+                "properties": {
+                    "attributes": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "endpoint": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "schema": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "SchemaAttribute": {
+                "type": "object",
+                "properties": {
+                    "caseExact": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "multiValued": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "readOnly": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "required": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "schema": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "subAttributes": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "SchemaSubAttribute": {
+                "type": "object",
+                "properties": {
+                    "caseExact": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "readOnly": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "required": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "ServiceProviderConfigs": {
+                "type": "object",
+                "properties": {
+                    "documentationUrl": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "Sort": {
+                "type": "object",
+                "properties": {
+                    "supported": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "User": {
+                "type": "object",
+                "properties": {
+                    "displayName": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "locale": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "timezone": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "userName": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "UserCollection": {
+                "type": "object",
+                "properties": {
+                    "resources": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "totalResults": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "UserDefinition": {
+                "type": "object",
+                "properties": {
+                    "displayName": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "locale": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "password": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "timezone": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "userName": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "UserFullName": {
+                "type": "object",
+                "properties": {
+                    "familyName": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "givenName": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "UserMetadata": {
+                "type": "object",
+                "properties": {
+                    "created": {
+                        "description": "",
+                        "type": "put"
+                    },
+                    "location": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            },
+            "XmlDataFormat": {
+                "type": "object",
+                "properties": {
+                    "supported": {
+                        "description": "",
+                        "type": "put"
+                    }
+                }
+            }
+        }
+    }
+}
