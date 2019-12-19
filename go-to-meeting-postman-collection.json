@@ -1,0 +1,823 @@
+{
+    "id": "8031bd22ceae7bd1d5e91983d27f8346",
+    "name": "Go To Meeting",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "06a57eb809733d9f6205cbe981924958",
+            "name": "Get groups",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups",
+            "description": "List all groups for an account. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "f6088032d0ef08c4698197fc03aca1ed",
+            "name": "Get attendees by group",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/attendees",
+            "description": "Returns all attendees for all meetings within specified date range held by organizers within the specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "startDate",
+                    "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "endDate",
+                    "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "f078407dac7bbf03e5dd1d1808c931b8",
+            "name": "Get historical meetings by group",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/historicalMeetings",
+            "description": "Get historical meetings for the specified group that started within the specified date\/time range. This API call is only available to users with the admin role. This API call is restricted to groups with a maximum of 50 organizers. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "startDate",
+                    "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "endDate",
+                    "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "2f52c5d19d3c2c15bc9d38c09a5ce0d4",
+            "name": "DEPRECATED: Get historical meetings by group",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/meetings",
+            "description": "DEPRECATED: Please use the new API calls 'Get historical meetings by group' and 'Get upcoming meetings by group'. Get meetings for a specified group. Additional filters can be used to view only meetings within a specified date range. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "history",
+                    "description": "When 'true', returns all past meetings within date range",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "startDate",
+                    "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "endDate",
+                    "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "a01abda554b30a3adcef4a4423d52eed",
+            "name": "Get organizers by group",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/organizers",
+            "description": "Returns all the organizers within a specific group. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "6dba7d2b72e7bc015fcd261125a98a86",
+            "name": "Create organizer in group",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/organizers",
+            "description": "Creates a new organizer and sends an email to the email address defined in request. This API call is only available to users with the admin role. You may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType variables, creating organizers for those products. A G2W or G2T organizer will also have access to G2M.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "The details of the organizer to be created",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "92b9e3f3be8de55e1fbb688590e8f5eb",
+            "name": "Get upcoming meetings by group",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/upcomingMeetings",
+            "description": "Get upcoming meetings for a specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "2e0b44df5ca410adf755d7d52902c0be",
+            "name": "Get historical meetings",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/historicalMeetings",
+            "description": "Get historical meetings for the currently authenticated organizer that started within the specified date\/time range. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "startDate",
+                    "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "endDate",
+                    "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "eaed696a7bd893492496afe082d08cf6",
+            "name": "DEPRECATED: Get historical meetings",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings",
+            "description": "DEPRECATED: Please use the new API calls 'Get historical meetings' and 'Get upcoming meetings'.  Gets historical meetings for the current authenticated organizer. Requires date range for filtering results to only meetings within specified dates. History searches will contain the parameter 'meetingInstanceKey' which is used in conjunction with the call 'Get Attendees by Meeting' to get attendee information for a past meeting.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "history",
+                    "description": "When 'true', returns all past meetings within date range",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "startDate",
+                    "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "endDate",
+                    "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "55d33581d7856506c0b7da72b468aa6a",
+            "name": "Create meeting",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings",
+            "description": "Create a new meeting based on the parameters specified.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "The details of the organizer to be created",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "9cbc417133058bd61b2bca2bdee78410",
+            "name": "Delete meeting",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings\/{meetingId}",
+            "description": "Deletes the meeting identified by the meetingId.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "b5c32fbd4a42874d9a0d67ed1d1fc21b",
+            "name": "Get meeting",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings\/{meetingId}",
+            "description": "Returns the meeting details for the specified meeting.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "6f30b40bbdecea97acc03c4c19659a6a",
+            "name": "Update meeting",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings\/{meetingId}",
+            "description": "Updates an existing meeting specified by meetingId.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "The details of the organizer to be created",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "38117d03af1a930ee0898dfa35b36cfc",
+            "name": "Get attendees by meeting",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings\/{meetingId}\/attendees",
+            "description": "List all attendees for specified meetingId of historical meeting. The historical meetings can be fetched using 'Get historical meetings', 'Get historical meetings by organizer', and 'Get historical meetings by group'. For users with the admin role this call returns attendees for any meeting. For any other user the call will return attendees for meetings on which the user is a valid organizer.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "meetingId",
+                    "description": "The meeting ID",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "b9dc465633c39f3bb27ed00ec7f04cb3",
+            "name": "Start meeting",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings\/{meetingId}\/start",
+            "description": "Returns a host URL that can be used to start a meeting. When this URL is opened in a web browser, the GoToMeeting client will be downloaded and launched and the meeting will start. The end user is not required to login to a client.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "5f5d2daa81163c461af47349041479e5",
+            "name": "Delete organizer by email",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers",
+            "description": "Deletes the individual organizer specified by the email address. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "email",
+                    "description": "The email address of the organizer",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "253fa28f29490a33243a6ed6a730fa40",
+            "name": "Get organizer by email \/ Get all organizers",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers",
+            "description": "Gets the individual organizer specified by the organizer's email address. If an email address is not specified, all organizers are returned. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "email",
+                    "description": "The email address of the organizer",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "884a7e40fff0659186bb918981c06eea",
+            "name": "Create organizer",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers",
+            "description": "Creates a new organizer and sends an email to the email address defined in the request. This API call is only available to users with the admin role. You may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType variables, creating organizers for those products. A G2W or G2T organizer will also have access to G2M.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "The details of the organizer to be created",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "d1bd57dd9daa5b32edde167d71006bae",
+            "name": "Delete organizer",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}",
+            "description": "Deletes the individual organizer specified by the organizer key. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "07a06dd5977abeff1b4b85eab62f18a8",
+            "name": "Get organizer",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}",
+            "description": "Returns the individual organizer specified by the key. This API call is only available to users with the admin role. Non-admin users can only make this call for their own organizerKey.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "f97b7f862c986adaf8576a3fd8250893",
+            "name": "Update organizer",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}",
+            "description": "Updates the products of the specified organizer. To add a product (G2M, G2W, G2T, OPENVOICE) for the organizer, the call must be sent once for each product you want to add. To remove all products for the organizer, set status to 'suspended'. The call is limited to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "The details of the organizer to be created",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "602f5130f28e498c7f6c19e60ab9cac7",
+            "name": "Get attendees by organizer",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}\/attendees",
+            "description": "Lists all attendees for all meetings within a specified date range for a specified organizer. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "startDate",
+                    "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "endDate",
+                    "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "31217d72ae2ef9b31716a3ce906fd0da",
+            "name": "Get historical meetings by organizer",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}\/historicalMeetings",
+            "description": "Get historical meetings for the specified organizer that started within the specified date\/time range. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "startDate",
+                    "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "endDate",
+                    "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "c12c51c5ab41ef8ce507375752bfa4e4",
+            "name": "DEPRECATED: Get meetings by organizer",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}\/meetings",
+            "description": "DEPRECATED: Please use the new API calls 'Get historical meetings by organizer' and 'Get upcoming meetings by organizer'. Gets future (scheduled) or past (history) meetings for a specified organizer. Include 'history=true' and the past start and end dates in the URL to retrieve past meetings. Enter 'scheduled=true' (without dates) to get scheduled meetings.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "scheduled",
+                    "description": "When 'true', returns all future meetings. Date range not supported.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "history",
+                    "description": "When 'true', returns all past meetings within date range",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "startDate",
+                    "description": "Start of date range, in ISO8601 UTC format, e.g. 2015-07-01T22:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "endDate",
+                    "description": "End of date range, in ISO8601 UTC format, e.g. 2015-07-01T23:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "9e243fc28cbf7b23ee1079f8ccf357f1",
+            "name": "Get upcoming meetings by organizer",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}\/upcomingMeetings",
+            "description": "Get upcoming meetings for a specified organizer. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        },
+        {
+            "id": "17db38cf56b05f016666a33a7529e5eb",
+            "name": "Get upcoming meetings",
+            "url": "httpsapi.citrixonline.com\/G2M\/rest\/upcomingMeetings",
+            "description": "Gets upcoming meetings for the current authenticated organizer.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "rawModeData": ""
+        }
+    ]
+}
