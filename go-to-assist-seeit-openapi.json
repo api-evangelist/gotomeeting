@@ -1,0 +1,212 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "0.9.0",
+        "title": "Go To Assist Seeit",
+        "description": "<p>Allows you to integrate GoToAssist Seeit into your own solutions.<\/p><p>General notes:<ul><li>GoToAssist Seeit sessions are identified by their uuid. The more readable 9 digit support key (e.g. 123-456-789) may be reused later for another session and thus cannot be used to unambiguously identify a session.<\/li><li>If not explicitly stated otherwise all timestamps represent the number of milliseconds since 1970-01-01 in UTC (similar to a Unix Timestamp but with millisecond resolution)<\/li><\/ul><\/p>",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httpsapi.citrixonline.com\/seeit\/v1"
+    ],
+    "paths": {
+        "\/sessions": {
+            "get": {
+                "summary": "Get details for multiple GoToAssist Seeit sessions",
+                "description": "<p>This endpoint allows you to get all relevant details for mulitple GoToAssist Seeit sessions. Session details are available for 90 days.<\/p><\/p>The fields and their values in the response depend on session status and the time elapsed since session end; e.g. session data like snapshots or the session recording are only available for 72 hours.<\/p><p>The results will be paged, with paging customizable to match your requirements.<\/p>",
+                "operationId": "SessionsGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "startTime",
+                        "in": "query",
+                        "description": "Optional start of date range as timestamp (will be compared against session creation time)"
+                    },
+                    {
+                        "name": "endTime",
+                        "in": "query",
+                        "description": "Optional end of date range as timestamp (will be compared against session creation time)"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Optional page number. If not specified, page 0 is delivered"
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "Optional page size. If not specified, 5 sessions are delivered"
+                    },
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Optional sort criteria, i.e. field name to sort by, optionally followed by a comma and the sort order (asc or desc). Every field available in the session details can be used as sort criteria. If not specified, result is sorted ascending by sessionCreateTime"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create a GoToAssist Seeit session",
+                "description": "This endpoint allows you to create a GoToAssist Seeit session. The session logically exists but is not started until you open the returned startUrl in a suitable browser.",
+                "operationId": "SessionsPost",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/sessions\/{uuid}": {
+            "get": {
+                "summary": "Get details for a single GoToAssist Seeit session",
+                "description": "<p>This endpoint allows you to get all relevant details for a single GoToAssist Seeit session. Session details are available for 90 days.<\/p><p>The fields and their values in the response depend on session status and the time elapsed since session end; e.g. session data like snapshots or the session recording are only available for 72 hours.<\/p>",
+                "operationId": "SessionsUuidGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "uuid",
+                        "in": "path",
+                        "description": "the uuid returned when creating the session."
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Link": {
+                "type": "object",
+                "properties": {
+                    "href": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "rel": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PagedSessionDetails": {
+                "type": "object",
+                "properties": {
+                    "content": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "links": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PagingInfo": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "size": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "totalElements": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "totalPages": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Session": {
+                "type": "object",
+                "properties": {
+                    "startUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "supportKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "uuid": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "SessionDetails": {
+                "type": "object",
+                "properties": {
+                    "sessionCreateTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionDataDownloadUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionDataDownloadUrlExpiration": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionDataPhotoCount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionDataPhotoNotesCount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionDataSize": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionDataStatus": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionEndTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionJoinTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionNotes": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionRecorded": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionStartTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionStatus": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "supportKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "technicianEmail": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "uuid": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
