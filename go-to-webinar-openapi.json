@@ -1,0 +1,1591 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Go To Webinar",
+        "description": "The GoToWebinar API provides seamless integration of webinar registrant and attendee data into your existing infrastructure or third-party applications. The ability to register participants, as well as pull lists of registrants and attendees for a webinar, allows organizers to manage the flow of information between their primary applications without manual intervention.",
+        "termsOfService": "https:\/\/developer.citrixonline.com\/terms-use"
+    },
+    "servers": [
+        "httpsapi.citrixonline.com\/G2W\/rest"
+    ],
+    "paths": {
+        "\/accounts\/{accountKey}\/webinars": {
+            "get": {
+                "summary": "Get all webinars for an account",
+                "description": "Retrieves the list of webinars for an account within a given date range. __*Page*__ and __*size*__ parameters are optional. Default __*page*__ is 0 and default __*size*__ is 20. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+                "operationId": "GetAllAccountWebinars",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "fromTime",
+                        "in": "query",
+                        "description": "A required start of datetime range in ISO8601 UTC format, e.g. 2015-07-13T10:00:00Z"
+                    },
+                    {
+                        "name": "toTime",
+                        "in": "query",
+                        "description": "A required end of datetime range in ISO8601 UTC format, e.g. 2015-07-13T22:00:00Z"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "The page number to be displayed. The first page is 0."
+                    },
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "The size of the page."
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/historicalWebinars": {
+            "get": {
+                "summary": "Get historical webinars",
+                "description": "Returns details for completed webinars for the specified organizer and completed webinars of other organizers where the specified organizer is a co-organizer.",
+                "operationId": "GetHistoricalWebinars",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "fromTime",
+                        "in": "query",
+                        "description": "A required start of datetime range in ISO8601 UTC format, e.g. 2015-07-13T10:00:00Z"
+                    },
+                    {
+                        "name": "toTime",
+                        "in": "query",
+                        "description": "A required end of datetime range in ISO8601 UTC format, e.g. 2015-07-13T22:00:00Z"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/sessions": {
+            "get": {
+                "summary": "Get organizer sessions",
+                "description": "Retrieve all completed sessions of all the webinars of a given organizer.",
+                "operationId": "GetOrganizerSessions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "fromTime",
+                        "in": "query",
+                        "description": "A required start of datetime range in ISO8601 UTC format, e.g. 2015-07-13T10:00:00Z"
+                    },
+                    {
+                        "name": "toTime",
+                        "in": "query",
+                        "description": "A required end of datetime range in ISO8601 UTC format, e.g. 2015-07-13T22:00:00Z"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/upcomingWebinars": {
+            "get": {
+                "summary": "Get upcoming webinars",
+                "description": "Returns webinars scheduled for the future for the specified organizer and webinars of other organizers where the specified organizer is a co-organizer.",
+                "operationId": "GetUpcomingWebinars",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars": {
+            "get": {
+                "summary": "Get all webinars",
+                "description": "Returns webinars scheduled for the future for a specified organizer.",
+                "operationId": "GetAllWebinars",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Create webinar",
+                "description": "Creates a single session webinar, a sequence of webinars or a series of webinars depending on the type field in the body: \"single_session\" creates a single webinar session, \"sequence\" creates a webinar with multiple meeting times where attendees are expected to be the same for all sessions, and \"series\" creates a webinar with multiple meetings times where attendees choose only one to attend. The default, if no type is declared, is single_session. A sequence webinar requires a \"recurrenceStart\" o",
+                "operationId": "CreateWebinar",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The webinar details"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}": {
+            "delete": {
+                "summary": "Cancel webinar",
+                "description": "Cancels a specific webinar. If the webinar is a series or sequence, this call deletes all scheduled sessions. To send cancellation emails to registrants set sendCancellationEmails=true in the request. When the cancellation emails are sent, the default generated message is used in the cancellation email body.",
+                "operationId": "CancelWebinar",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "sendCancellationEmails",
+                        "in": "query",
+                        "description": "Indicates whether cancellation notice emails should be sent. The default value is false"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "Get webinar",
+                "description": "Retrieve information on a specific webinar. If the type of the webinar is 'sequence', a sequence of future times will be provided. Webinars of type 'series' are treated the same as normal webinars - each session in the webinar series has a different webinarKey. If an organizer cancels a webinar, then a request to get that webinar would return a '404 Not Found' error.",
+                "operationId": "GetWebinar",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "put": {
+                "summary": "Update webinar",
+                "description": "Updates a webinar. The call requires at least one of the parameters in the request body. The request completely replaces the existing session, series, or sequence and so must include the full definition of each as for the Create call. Set notifyParticipants=true to send update emails to registrants.",
+                "operationId": "UpdateWebinar",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "notifyParticipants",
+                        "in": "query",
+                        "description": "Defines whether to send notifications to participants"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The webinar details"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/attendees": {
+            "get": {
+                "summary": "Get attendees for all webinar sessions",
+                "description": "Returns all attendees for all sessions of the specified webinar.",
+                "operationId": "GetAttendeesForAllWebinarSessions",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/audio": {
+            "get": {
+                "summary": "Get audio information",
+                "description": "Retrieves the audio\/conferencing information for a specific webinar.",
+                "operationId": "GetAudioInformation",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Update audio information",
+                "description": "Updates the audio\/conferencing settings for a specific webinar",
+                "operationId": "UpdateAudioInformation",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "notifyParticipants",
+                        "in": "query",
+                        "description": "Defines whether to send notifications to participants"
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The webinar details"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/coorganizers": {
+            "get": {
+                "summary": "Get co-organizers",
+                "description": "Returns the co-organizers for the specified webinar. The original organizer who created the webinar is filtered out of the list. If the webinar has no co-organizers, an empty array is returned. Co-organizers that do not have a GoToWebinar account are returned as external co-organizers. For those organizers no surname is returned.",
+                "operationId": "GetCoorganizers",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Create co-organizers",
+                "description": "Creates co-organizers for the specified webinar. For co-organizers that have a GoToWebinar account you have to set the parameter 'external' to 'false'. In this case you have to pass the parameter 'organizerKey' only. For co-organizers that have no GoToWebinar account you have to set the parameter 'external' to 'true'. In this case you have to pass the parameters 'givenName' and 'email'. Since there is no parameter for 'surname' you should pass first and last name to the parameter 'givenName'.",
+                "operationId": "CreateCoorganizers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The webinar details"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/coorganizers\/{coorganizerKey}": {
+            "delete": {
+                "summary": "Delete co-organizer",
+                "description": "Deletes an internal co-organizer specified by the coorganizerKey (memberKey).",
+                "operationId": "DeleteCoorganizer",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "external",
+                        "in": "query",
+                        "description": "By default only internal co-organizers (with a GoToWebinar account) can be deleted. If you want to use this call for external co-organizers you have to set this parameter to 'true'."
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/coorganizers\/{coorganizerKey}\/resendInvitation": {
+            "post": {
+                "summary": "Resend invitation",
+                "description": "Resends an invitation email to the specified co-organizer",
+                "operationId": "ResendCoorganizerInvitation",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "external",
+                        "in": "query",
+                        "description": "By default only internal co-organizers (with a GoToWebinar account) can be deleted. If you want to use this call for external co-organizers you have to set this parameter to 'true'."
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/meetingtimes": {
+            "get": {
+                "summary": "Get webinar meeting times",
+                "description": "Retrieves the meeting times for a webinar.",
+                "operationId": "GetWebinarMeetingTimes",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/panelists": {
+            "get": {
+                "summary": "Get webinar panelists",
+                "description": "Retrieves all the panelists for a specific webinar.",
+                "operationId": "GetPanelists",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Create Panelists",
+                "description": "Create panelists for a specified webinar",
+                "operationId": "CreatePanelists",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The webinar details"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/panelists\/{panelistKey}": {
+            "delete": {
+                "summary": "Delete webinar panelist",
+                "description": "Removes a webinar panelist.",
+                "operationId": "DeleteWebinarPanelist",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/panelists\/{panelistKey}\/resendInvitation": {
+            "post": {
+                "summary": "Resend panelist invitation",
+                "description": "Resend the panelist invitation email.",
+                "operationId": "ResendPanelistInvitation",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/performance": {
+            "get": {
+                "summary": "Get performance for all webinar sessions",
+                "description": "Gets performance details for all sessions of a specific webinar.",
+                "operationId": "GetPerformanceForAllWebinarSessions",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/registrants": {
+            "get": {
+                "summary": "Get registrants",
+                "description": "Retrieve registration details for all registrants of a specific webinar. Registrant details will not include all fields captured when creating the registrant. To see all data, use the API call 'Get Registrant'. Registrants can have one of the following states; <br>WAITING - registrant registered and is awaiting approval (where organizer has required approval), <br>APPROVED - registrant registered and is approved, and <br>DENIED - registrant registered and was denied.",
+                "operationId": "GetAllRegistrantsForWebinar",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Create registrant",
+                "description": "Register an attendee for a scheduled webinar. The response contains the registrantKey and join URL for the registrant. An email will be sent to the registrant unless the organizer turns off the confirmation email setting from the GoToWebinar website. Please note that you must provide all required fields including custom fields defined during the webinar creation. Use the API call 'Get registration fields' to get a list of all fields, if they are required, and their possible values. At this time ",
+                "operationId": "CreateRegistrant",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "Set to 'application\/vnd.citrix.g2wapi-v1.1+json' to make a registration using fields (custom or default) additional to the basic ones."
+                    },
+                    {
+                        "name": "resendConfirmation",
+                        "in": "query",
+                        "description": "Indicates whether the confirmation email should be resent when a registrant is re-registered. The default value is false."
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The webinar details"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/registrants\/fields": {
+            "get": {
+                "summary": "Get registration fields",
+                "description": "Retrieve required, optional registration, and custom questions for a specified webinar.",
+                "operationId": "GetRegistrationFields",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/registrants\/{registrantKey}": {
+            "delete": {
+                "summary": "Delete registrant",
+                "description": "Removes a webinar registrant from current registrations for the specified webinar. The webinar must be a scheduled, future webinar.",
+                "operationId": "DeleteRegistrant",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "get": {
+                "summary": "Get registrant",
+                "description": "Retrieve registration details for a specific registrant.",
+                "operationId": "GetRegistrant",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions": {
+            "get": {
+                "summary": "Get webinar sessions",
+                "description": "Retrieves details for all past sessions of a specific webinar.",
+                "operationId": "GetAllSessions",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}": {
+            "get": {
+                "summary": "Get webinar session",
+                "description": "Retrieves attendance details for a specific webinar session that has ended. If attendees attended the session ('registrantsAttended'), specific attendance details, such as attendenceTime for a registrant, will also be retrieved. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+                "operationId": "GetWebinarSession",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees": {
+            "get": {
+                "summary": "Get session attendees",
+                "description": "Retrieve details for all attendees of a specific webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+                "operationId": "GetAttendees",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees\/{registrantKey}": {
+            "get": {
+                "summary": "Get attendee",
+                "description": "Retrieve registration details for a particular attendee of a specific webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+                "operationId": "GetAttendee",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees\/{registrantKey}\/polls": {
+            "get": {
+                "summary": "Get attendee poll answers",
+                "description": "Get poll answers from a particular attendee of a specific webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+                "operationId": "GetAttendeePollAnswers",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees\/{registrantKey}\/questions": {
+            "get": {
+                "summary": "Get attendee questions",
+                "description": "Get questions asked by an attendee during a webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+                "operationId": "GetAttendeeQuestions",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees\/{registrantKey}\/surveys": {
+            "get": {
+                "summary": "Get attendee survey answers",
+                "description": "Retrieve survey answers from a particular attendee during a webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+                "operationId": "GetAttendeeSurveyAnswers",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/performance": {
+            "get": {
+                "summary": "Get session performance",
+                "description": "Get performance details for a session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+                "operationId": "GetPerformance",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/polls": {
+            "get": {
+                "summary": "Get session polls",
+                "description": "Retrieve all collated attendee questions and answers for polls from a specific webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+                "operationId": "GetPolls",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/questions": {
+            "get": {
+                "summary": "Get session questions",
+                "description": "Retrieve questions and answers for a past webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+                "operationId": "GetQuestions",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/surveys": {
+            "get": {
+                "summary": "Get session surveys",
+                "description": "Retrieve surveys for a past webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+                "operationId": "GetSurveys",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AccessCodes": {
+                "type": "object",
+                "properties": {
+                    "attendee": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizer": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "panelist": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AccountWebinar": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "impromptu": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isPasswordProtected": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrationUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeZone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "times": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "webinarID": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "webinarKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AccountWebinars": {
+                "type": "object",
+                "properties": {
+                    "webinars": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AccountWebinarsResponse": {
+                "type": "object",
+                "properties": {
+                    "_embedded": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "page": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AnswerToAttendeeQuestion": {
+                "type": "object",
+                "properties": {
+                    "answer": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "answeredBy": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Attendance": {
+                "type": "object",
+                "properties": {
+                    "joinTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "leaveTime": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AttendanceStatistics": {
+                "type": "object",
+                "properties": {
+                    "averageAttendanceTimeSeconds": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "averageAttentiveness": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "averageInterestRating": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentageAttendance": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrantCount": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Attendee": {
+                "type": "object",
+                "properties": {
+                    "attendance": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "attendanceTimeInSeconds": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrantKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AttendeeQuestion": {
+                "type": "object",
+                "properties": {
+                    "answers": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "askedBy": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "question": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Audio": {
+                "type": "object",
+                "properties": {
+                    "confCallNumbers": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "privateInfo": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "AudioUpdate": {
+                "type": "object",
+                "properties": {
+                    "privateInfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "pstnInfo": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "CallNumbers": {
+                "type": "object",
+                "properties": {
+                    "toll": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tollFree": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Coorganizer": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "external": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "givenName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "joinLink": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "memberKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "surname": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "CoorganizerReqCreate": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "external": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "givenName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "CreatedPanelist": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "joinLink": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "panelistKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "CreatedWebinar": {
+                "type": "object",
+                "properties": {
+                    "webinarKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "CustomAnswers": {
+                "type": "object",
+                "properties": {
+                    "answer": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "question": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "DateTimeRange": {
+                "type": "object",
+                "properties": {
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "HistoricalWebinar": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeZone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "times": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "webinarID": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "webinarKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Panelist": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "joinLink": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "panelistId": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PanelistReqCreate": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Poll": {
+                "type": "object",
+                "properties": {
+                    "numberOfResponses": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "question": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "responses": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PollAnswer": {
+                "type": "object",
+                "properties": {
+                    "answer": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "question": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PollResponse": {
+                "type": "object",
+                "properties": {
+                    "percentage": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "text": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PollsAndSurveysStatistics": {
+                "type": "object",
+                "properties": {
+                    "percentagePollsCompleted": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "percentageSurveysCompleted": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "pollCount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "questionsAsked": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "surveyCount": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PrivateInfo": {
+                "type": "object",
+                "properties": {
+                    "attendee": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizer": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "panelist": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PrivateInfoUpdate": {
+                "type": "object",
+                "properties": {
+                    "attendee": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizer": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "panelist": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "PstnInfoUpdate": {
+                "type": "object",
+                "properties": {
+                    "tollCountries": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tollFreeCountries": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Registrant": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "joinUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrantKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrationDate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeZone": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RegistrantCreated": {
+                "type": "object",
+                "properties": {
+                    "joinUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrantKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RegistrantDetailed": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "city": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "country": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "employeeCount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "implementationTimeFrame": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "industry": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "jobTitle": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "joinUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfEmployees": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organization": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "phone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchasingRole": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchasingTimeFrame": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "questionsAndComments": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrantKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrationDate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "responses": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "source": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeZone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "unsubscribed": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "zipCode": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RegistrantFields": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "city": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "country": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "industry": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "jobTitle": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfEmployees": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organization": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "phone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchasingRole": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchasingTimeFrame": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "questionsAndComments": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "responses": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "source": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "state": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "zipCode": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RegistrantQAResponse": {
+                "type": "object",
+                "properties": {
+                    "answerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "questionKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "responseText": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RegistrationAnswer": {
+                "type": "object",
+                "properties": {
+                    "answer": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "answerKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RegistrationField": {
+                "type": "object",
+                "properties": {
+                    "answers": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "field": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "maxSize": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "required": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RegistrationFields": {
+                "type": "object",
+                "properties": {
+                    "fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "questions": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RegistrationQuestion": {
+                "type": "object",
+                "properties": {
+                    "answers": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "maxSize": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "question": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "questionKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "required": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Session": {
+                "type": "object",
+                "properties": {
+                    "endTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrantsAttended": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "webinarID": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "webinarKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "SessionPerformance": {
+                "type": "object"
+            },
+            "UpcomingWebinar": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "inSession": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrationUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeZone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "times": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "webinarID": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "webinarKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Webinar": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "inSession": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfRegistrants": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrationUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeZone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "times": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "webinarID": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "webinarKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "WebinarByKey": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "inSession": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfOpenedInvitations": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfRegistrants": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "numberOfRegistrationLinkClicks": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrationUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeZone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "times": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "webinarID": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "webinarKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "WebinarReqCreate": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isPasswordProtected": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeZone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "times": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "type": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "WebinarReqUpdate": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "locale": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeZone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "times": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "firstPage": {
+                "type": "object",
+                "properties": {
+                    "href": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "lastPage": {
+                "type": "object",
+                "properties": {
+                    "href": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "page": {
+                "type": "object",
+                "properties": {
+                    "number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "size": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "totalElements": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "totalPages": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "selfPage": {
+                "type": "object",
+                "properties": {
+                    "href": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
