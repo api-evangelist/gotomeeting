@@ -1,0 +1,943 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "GoToWebinar REST API",
+        "description": "The Citrix GoToWebinar API provides seamless integration of webinar registrant and attendee data into your existing infrastructure or third-party applications. The ability to register participants, as well as pull lists of registrants and attendees for a webinar, allows organizers to manage the flow of information between their primary applications without manual intervention.",
+        "termsOfService": "https:\/\/developer.citrixonline.com\/terms-use"
+    },
+    "servers": [
+        "http:\/\/api.citrixonline.com\/G2W\/rest"
+    ],
+    "paths": {
+        "\/organizers\/{organizerKey}\/historicalWebinars": {
+            "get": {
+                "summary": "Get historical webinars",
+                "description": "Returns details for completed webinars for the specified organizer and completed webinars of other organizers where the specified organizer is a co-organizer.",
+                "operationId": "GetHistoricalWebinars",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "organizerKey",
+                        "in": "path",
+                        "description": "The key of the organizer"
+                    },
+                    {
+                        "name": "fromTime",
+                        "in": "query",
+                        "description": "A required start of datetime range in ISO8601 UTC format, e.g. 2015-07-13T10:00:00Z"
+                    },
+                    {
+                        "name": "toTime",
+                        "in": "query",
+                        "description": "A required end of datetime range in ISO8601 UTC format, e.g. 2015-07-13T22:00:00Z"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/organizers\/{organizerKey}\/sessions": {
+            "get": {
+                "summary": "Get organizer sessions",
+                "description": "Retrieve all completed sessions of all the webinars of a given organizer.",
+                "operationId": "GetOrganizerSessions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "organizerKey",
+                        "in": "path",
+                        "description": "The key of the organizer"
+                    },
+                    {
+                        "name": "fromTime",
+                        "in": "query",
+                        "description": "A required start of datetime range in ISO8601 UTC format, e.g. 2015-07-13T10:00:00Z"
+                    },
+                    {
+                        "name": "toTime",
+                        "in": "query",
+                        "description": "A required end of datetime range in ISO8601 UTC format, e.g. 2015-07-13T22:00:00Z"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/organizers\/{organizerKey}\/upcomingWebinars": {
+            "get": {
+                "summary": "Get upcoming webinars",
+                "description": "Returns webinars scheduled for the future for the specified organizer and webinars of other organizers where the specified organizer is a co-organizer.",
+                "operationId": "GetUpcomingWebinars",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "organizerKey",
+                        "in": "path",
+                        "description": "The key of the organizer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "\/organizers\/{organizerKey}\/webinars": {
+            "get": {
+                "summary": "Get all webinars",
+                "description": "Returns webinars scheduled for the future for a specified organizer.",
+                "operationId": "GetAllWebinars",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "organizerKey",
+                        "in": "path",
+                        "description": "The key of the organizer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create webinar",
+                "description": "Creates a single session webinar. The call requires an organizer, a webinar subject and description, and a start and end time. The response provides a numeric webinarKey in string format for the new webinar. Once a webinar has been created with this method, you can accept registrations.",
+                "operationId": "CreateWebinar",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "organizerKey",
+                        "in": "path",
+                        "description": "The key of the organizer"
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AnswerToAttendeeQuestion": {
+                "type": "object",
+                "properties": {
+                    "answer": {
+                        "description": "An answer given to a question asked by an attendee during a webinar session",
+                        "type": "string"
+                    },
+                    "answeredBy": {
+                        "description": "The key of the organizer that answered the attendee's question",
+                        "type": "string"
+                    }
+                }
+            },
+            "Attendance": {
+                "type": "object",
+                "properties": {
+                    "joinTime": {
+                        "description": "The time the attendee joined a webinar session",
+                        "type": "string"
+                    },
+                    "leaveTime": {
+                        "description": "The time the attendee left a webinar session",
+                        "type": "string"
+                    }
+                }
+            },
+            "AttendanceStatistics": {
+                "type": "object",
+                "properties": {
+                    "averageAttendanceTimeSeconds": {
+                        "description": "Average attendance time in seconds",
+                        "type": "number"
+                    },
+                    "averageAttentiveness": {
+                        "description": "Average based on the focus of the attendees Viewer during the webinar session",
+                        "type": "number"
+                    },
+                    "averageInterestRating": {
+                        "description": "Numerical value 1-100 (100 being most interested) indicating the average interest rating of the webinar attendees",
+                        "type": "number"
+                    },
+                    "percentageAttendance": {
+                        "description": "The percentage of registrants that actually attended the webinar session",
+                        "type": "number"
+                    },
+                    "registrantCount": {
+                        "description": "The number of registrations for the webinar",
+                        "type": "integer"
+                    }
+                }
+            },
+            "Attendee": {
+                "type": "object",
+                "properties": {
+                    "attendance": {
+                        "description": "The list of times the attendee joined and left the webinar session",
+                        "type": "array"
+                    },
+                    "attendanceTimeInSeconds": {
+                        "description": "The total attendance time in seconds",
+                        "type": "integer"
+                    },
+                    "email": {
+                        "description": "The attendee's email address",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The attendee's first name",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The attendee's last name",
+                        "type": "string"
+                    },
+                    "registrantKey": {
+                        "description": "The key of the webinar attendee",
+                        "type": "integer"
+                    },
+                    "sessionKey": {
+                        "description": "The unique key of the webinar session",
+                        "type": "integer"
+                    }
+                }
+            },
+            "attendance": {
+                "type": "array"
+            },
+            "AttendeeQuestion": {
+                "type": "object",
+                "properties": {
+                    "answers": {
+                        "description": "Answer to a question of an attendee and key of the organizer that answered",
+                        "type": "array"
+                    },
+                    "askedBy": {
+                        "description": "The email address of the attendee that asked the question",
+                        "type": "string"
+                    },
+                    "question": {
+                        "description": "The question asked by the attendee",
+                        "type": "string"
+                    }
+                }
+            },
+            "answers": {
+                "type": "array"
+            },
+            "Coorganizer": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "The attendee's email address",
+                        "type": "string"
+                    },
+                    "givenName": {
+                        "description": "The coorganizer's first name",
+                        "type": "string"
+                    },
+                    "memberKey": {
+                        "description": "The coorganizer's key",
+                        "type": "integer"
+                    },
+                    "surname": {
+                        "description": "The coorganizer's last name",
+                        "type": "string"
+                    }
+                }
+            },
+            "CreatedWebinar": {
+                "type": "object",
+                "properties": {
+                    "webinarKey": {
+                        "description": "The unique key of the webinar.",
+                        "type": "string"
+                    }
+                }
+            },
+            "CustomAnswers": {
+                "type": "object",
+                "properties": {
+                    "answer": {
+                        "description": "An answer given to a question asked by an attendee during a webinar session",
+                        "type": "string"
+                    },
+                    "question": {
+                        "description": "The question asked by the attendee",
+                        "type": "string"
+                    }
+                }
+            },
+            "DateTimeRange": {
+                "type": "object",
+                "properties": {
+                    "endTime": {
+                        "description": "The ending time of an interval, e.g. 2015-07-13T22:00:00Z",
+                        "type": "string"
+                    },
+                    "startTime": {
+                        "description": "The starting time of an interval, e.g. 2015-07-13T10:00:00Z",
+                        "type": "string"
+                    }
+                }
+            },
+            "HistoricalWebinar": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "A short description of the webinar",
+                        "type": "string"
+                    },
+                    "organizerKey": {
+                        "description": "The key of the webinar organizer",
+                        "type": "integer"
+                    },
+                    "subject": {
+                        "description": "The webinar subject",
+                        "type": "string"
+                    },
+                    "times": {
+                        "description": "Array with startTime and endTime for the webinar sessions",
+                        "type": "array"
+                    },
+                    "timeZone": {
+                        "description": "The timezone where the webinar is taking place",
+                        "type": "string"
+                    },
+                    "webinarKey": {
+                        "description": "The unique key of the webinar",
+                        "type": "integer"
+                    }
+                }
+            },
+            "times": {
+                "type": "array"
+            },
+            "Panelist": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "The attendee's email address",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The attendee's first name",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The attendee's last name",
+                        "type": "string"
+                    },
+                    "panelistId": {
+                        "description": "The panelist's ID",
+                        "type": "integer"
+                    }
+                }
+            },
+            "Poll": {
+                "type": "object",
+                "properties": {
+                    "numberOfResponses": {
+                        "description": "The total number of responses received for this poll or survey",
+                        "type": "integer"
+                    },
+                    "question": {
+                        "description": "The question asked by the attendee",
+                        "type": "string"
+                    },
+                    "responses": {
+                        "description": "The responses given by the attendees to the poll or survey",
+                        "type": "array"
+                    }
+                }
+            },
+            "responses": {
+                "type": "array"
+            },
+            "PollAnswer": {
+                "type": "object",
+                "properties": {
+                    "answer": {
+                        "description": "An answer given to a question asked by an attendee during a webinar session",
+                        "type": "string"
+                    },
+                    "question": {
+                        "description": "The question asked by the attendee",
+                        "type": "string"
+                    }
+                }
+            },
+            "PollResponse": {
+                "type": "object",
+                "properties": {
+                    "percentage": {
+                        "description": "The percentage of responses that favored this particular option",
+                        "type": "number"
+                    },
+                    "text": {
+                        "description": "The text of the response\/option to a poll or survey",
+                        "type": "string"
+                    }
+                }
+            },
+            "PollsAndSurveysStatistics": {
+                "type": "object",
+                "properties": {
+                    "percentagePollsCompleted": {
+                        "description": "The percentage of polls completed by the attendees",
+                        "type": "number"
+                    },
+                    "percentageSurveysCompleted": {
+                        "description": "The percentage of surveys completed by the attendees",
+                        "type": "number"
+                    },
+                    "pollCount": {
+                        "description": "The number of polls launched at a webinar session",
+                        "type": "integer"
+                    },
+                    "questionsAsked": {
+                        "description": "The number of questions asked at a webinar session",
+                        "type": "integer"
+                    },
+                    "surveyCount": {
+                        "description": "The percentage of surveys launched at a webinar session",
+                        "type": "number"
+                    }
+                }
+            },
+            "Registrant": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "The attendee's email address",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The attendee's first name",
+                        "type": "string"
+                    },
+                    "joinUrl": {
+                        "description": "The URL the registrant will use to join the webinar",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The attendee's last name",
+                        "type": "string"
+                    },
+                    "registrantKey": {
+                        "description": "The key of the webinar attendee",
+                        "type": "integer"
+                    },
+                    "registrationDate": {
+                        "description": "The registration date and time",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The registration status",
+                        "type": "string"
+                    },
+                    "timeZone": {
+                        "description": "The timezone where the webinar is taking place",
+                        "type": "string"
+                    }
+                }
+            },
+            "RegistrantCreated": {
+                "type": "object",
+                "properties": {
+                    "joinUrl": {
+                        "description": "The URL the registrant will use to join the webinar",
+                        "type": "string"
+                    },
+                    "registrantKey": {
+                        "description": "The key of the webinar attendee",
+                        "type": "integer"
+                    }
+                }
+            },
+            "RegistrantDetailed": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "description": "The registrant's address",
+                        "type": "string"
+                    },
+                    "city": {
+                        "description": "The registrant's city",
+                        "type": "string"
+                    },
+                    "country": {
+                        "description": "The registrant's country",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The attendee's email address",
+                        "type": "string"
+                    },
+                    "employeeCount": {
+                        "description": "The size in employees of the registrant's organization",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The attendee's first name",
+                        "type": "string"
+                    },
+                    "implementationTimeFrame": {
+                        "description": "The time frame within which the product will be purchased",
+                        "type": "string"
+                    },
+                    "industry": {
+                        "description": "The type of industry the registrant's organization belongs to",
+                        "type": "string"
+                    },
+                    "jobTitle": {
+                        "description": "The registrant's job title",
+                        "type": "string"
+                    },
+                    "joinUrl": {
+                        "description": "The URL the registrant will use to join the webinar",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The attendee's last name",
+                        "type": "string"
+                    },
+                    "numberOfEmployees": {
+                        "description": "The size in employees of the registrant's organization",
+                        "type": "string"
+                    },
+                    "organization": {
+                        "description": "The registrant's organization",
+                        "type": "string"
+                    },
+                    "phone": {
+                        "description": "The registrant's phone",
+                        "type": "string"
+                    },
+                    "purchasingRole": {
+                        "description": "The registrant's role in purchasing the product",
+                        "type": "string"
+                    },
+                    "purchasingTimeFrame": {
+                        "description": "The time frame within which the product will be purchased",
+                        "type": "string"
+                    },
+                    "questionsAndComments": {
+                        "description": "Any questions or comments the registrant made at the time of registration",
+                        "type": "string"
+                    },
+                    "registrantKey": {
+                        "description": "The key of the webinar attendee",
+                        "type": "integer"
+                    },
+                    "registrationDate": {
+                        "description": "The registration date and time",
+                        "type": "string"
+                    },
+                    "responses": {
+                        "description": "The responses given by the attendees to the poll or survey",
+                        "type": "array"
+                    },
+                    "state": {
+                        "description": "The registrant's state (US only)",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The registration status",
+                        "type": "string"
+                    },
+                    "timeZone": {
+                        "description": "The timezone where the webinar is taking place",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The type is REGULAR for \"One session\" and \"Sequence\" webinars. For webinar series this parameter is not passed",
+                        "type": "string"
+                    },
+                    "unsubscribed": {
+                        "description": "Indicates whether the registrant opted-out from receiving other emails from this webinar's organizer",
+                        "type": "boolean"
+                    },
+                    "zipCode": {
+                        "description": "The registrant's zip (post) code",
+                        "type": "string"
+                    }
+                }
+            },
+            "RegistrantFields": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "description": "The registrant's address",
+                        "type": "string"
+                    },
+                    "city": {
+                        "description": "The registrant's city",
+                        "type": "string"
+                    },
+                    "country": {
+                        "description": "The registrant's country",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "The attendee's email address",
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "description": "The attendee's first name",
+                        "type": "string"
+                    },
+                    "industry": {
+                        "description": "The type of industry the registrant's organization belongs to",
+                        "type": "string"
+                    },
+                    "jobTitle": {
+                        "description": "The registrant's job title",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The attendee's last name",
+                        "type": "string"
+                    },
+                    "numberOfEmployees": {
+                        "description": "The size in employees of the registrant's organization",
+                        "type": "string"
+                    },
+                    "organization": {
+                        "description": "The registrant's organization",
+                        "type": "string"
+                    },
+                    "phone": {
+                        "description": "The registrant's phone",
+                        "type": "string"
+                    },
+                    "purchasingRole": {
+                        "description": "The registrant's role in purchasing the product",
+                        "type": "string"
+                    },
+                    "purchasingTimeFrame": {
+                        "description": "The time frame within which the product will be purchased",
+                        "type": "string"
+                    },
+                    "questionsAndComments": {
+                        "description": "Any questions or comments the registrant made at the time of registration",
+                        "type": "string"
+                    },
+                    "responses": {
+                        "description": "The responses given by the attendees to the poll or survey",
+                        "type": "array"
+                    },
+                    "state": {
+                        "description": "The registrant's state (US only)",
+                        "type": "string"
+                    },
+                    "zipCode": {
+                        "description": "The registrant's zip (post) code",
+                        "type": "string"
+                    }
+                }
+            },
+            "RegistrantQAResponse": {
+                "type": "object",
+                "properties": {
+                    "answerKey": {
+                        "description": "The numeric key of the answer to a multiple-choice question.",
+                        "type": "integer"
+                    },
+                    "questionKey": {
+                        "description": "The unique key of the question",
+                        "type": "integer"
+                    },
+                    "responseText": {
+                        "description": "Answer of the question.",
+                        "type": "string"
+                    }
+                }
+            },
+            "RegistrationAnswer": {
+                "type": "object",
+                "properties": {
+                    "answer": {
+                        "description": "An answer given to a question asked by an attendee during a webinar session",
+                        "type": "string"
+                    },
+                    "answerKey": {
+                        "description": "The numeric key of the answer to a multiple-choice question.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "RegistrationField": {
+                "type": "object",
+                "properties": {
+                    "answers": {
+                        "description": "Answer to a question of an attendee and key of the organizer that answered",
+                        "type": "array"
+                    },
+                    "field": {
+                        "description": "The name of the registration field",
+                        "type": "string"
+                    },
+                    "maxSize": {
+                        "description": "The character size of the custom registration field (max 128)",
+                        "type": "integer"
+                    },
+                    "required": {
+                        "description": "Indicates whether the custom registration field is compulsory",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "RegistrationFields": {
+                "type": "object",
+                "properties": {
+                    "fields": {
+                        "description": "The default fields the organizer has selected for the webinar registration form",
+                        "type": "array"
+                    },
+                    "questions": {
+                        "description": "Custom fields created by the organizer for the webinar registration form",
+                        "type": "array"
+                    }
+                }
+            },
+            "fields": {
+                "type": "array"
+            },
+            "questions": {
+                "type": "array"
+            },
+            "RegistrationQuestion": {
+                "type": "object",
+                "properties": {
+                    "answers": {
+                        "description": "Answer to a question of an attendee and key of the organizer that answered",
+                        "type": "array"
+                    },
+                    "maxSize": {
+                        "description": "The character size of the custom registration field (max 128)",
+                        "type": "integer"
+                    },
+                    "question": {
+                        "description": "The question asked by the attendee",
+                        "type": "string"
+                    },
+                    "questionKey": {
+                        "description": "The unique key of the question",
+                        "type": "integer"
+                    },
+                    "required": {
+                        "description": "Indicates whether the custom registration field is compulsory",
+                        "type": "boolean"
+                    },
+                    "type": {
+                        "description": "The type is REGULAR for \"One session\" and \"Sequence\" webinars. For webinar series this parameter is not passed",
+                        "type": "string"
+                    }
+                }
+            },
+            "Session": {
+                "type": "object",
+                "properties": {
+                    "endTime": {
+                        "description": "The ending time of an interval, e.g. 2015-07-13T22:00:00Z",
+                        "type": "string"
+                    },
+                    "registrantsAttended": {
+                        "description": "The number of registrants who attended the webinar session",
+                        "type": "integer"
+                    },
+                    "sessionKey": {
+                        "description": "The unique key of the webinar session",
+                        "type": "integer"
+                    },
+                    "startTime": {
+                        "description": "The starting time of an interval, e.g. 2015-07-13T10:00:00Z",
+                        "type": "string"
+                    },
+                    "webinarKey": {
+                        "description": "The unique key of the webinar",
+                        "type": "integer"
+                    }
+                }
+            },
+            "SessionPerformance": {
+                "type": "object",
+                "properties": {
+                    "AttendanceStatistics": {
+                        "description": "Describes attendance metrics for a webinar session.",
+                        "type": "object"
+                    },
+                    "attendance": {
+                        "description": "Attendance statistics for a webinar session",
+                        "type": ""
+                    },
+                    "PollsAndSurveysStatistics": {
+                        "description": "Details on the polls and surveys for a webinar session.",
+                        "type": "object"
+                    },
+                    "pollsAndSurveys": {
+                        "description": "Polls and surveys for a webinar session",
+                        "type": ""
+                    }
+                }
+            },
+            "UpcomingWebinar": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "A short description of the webinar",
+                        "type": "string"
+                    },
+                    "inSession": {
+                        "description": "Indicates whether there is a webinar session currently in progress",
+                        "type": "boolean"
+                    },
+                    "organizerKey": {
+                        "description": "The key of the webinar organizer",
+                        "type": "integer"
+                    },
+                    "registrationUrl": {
+                        "description": "The URL the webinar invitees can use to register",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The webinar subject",
+                        "type": "string"
+                    },
+                    "times": {
+                        "description": "Array with startTime and endTime for the webinar sessions",
+                        "type": "array"
+                    },
+                    "timeZone": {
+                        "description": "The timezone where the webinar is taking place",
+                        "type": "string"
+                    },
+                    "webinarKey": {
+                        "description": "The unique key of the webinar",
+                        "type": "integer"
+                    }
+                }
+            },
+            "Webinar": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "A short description of the webinar",
+                        "type": "string"
+                    },
+                    "inSession": {
+                        "description": "Indicates whether there is a webinar session currently in progress",
+                        "type": "boolean"
+                    },
+                    "numberOfRegistrants": {
+                        "description": "The number of registrants at the webinar",
+                        "type": "integer"
+                    },
+                    "organizerKey": {
+                        "description": "The key of the webinar organizer",
+                        "type": "integer"
+                    },
+                    "registrationUrl": {
+                        "description": "The URL the webinar invitees can use to register",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The webinar subject",
+                        "type": "string"
+                    },
+                    "times": {
+                        "description": "Array with startTime and endTime for the webinar sessions",
+                        "type": "array"
+                    },
+                    "timeZone": {
+                        "description": "The timezone where the webinar is taking place",
+                        "type": "string"
+                    },
+                    "webinarKey": {
+                        "description": "The unique key of the webinar",
+                        "type": "integer"
+                    }
+                }
+            },
+            "WebinarByKey": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "A short description of the webinar",
+                        "type": "string"
+                    },
+                    "inSession": {
+                        "description": "Indicates whether there is a webinar session currently in progress",
+                        "type": "boolean"
+                    },
+                    "numberOfOpenedInvitations": {
+                        "description": "The number of recipients who opened the invitation email to register for the webinar",
+                        "type": "integer"
+                    },
+                    "numberOfRegistrants": {
+                        "description": "The number of registrants at the webinar",
+                        "type": "integer"
+                    },
+                    "numberOfRegistrationLinkClicks": {
+                        "description": "The number of recipients who clicked on the link to register for the webinar",
+                        "type": "integer"
+                    },
+                    "organizerKey": {
+                        "description": "The key of the webinar organizer",
+                        "type": "integer"
+                    },
+                    "registrationUrl": {
+                        "description": "The URL the webinar invitees can use to register",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The webinar subject",
+                        "type": "string"
+                    },
+                    "times": {
+                        "description": "Array with startTime and endTime for the webinar sessions",
+                        "type": "array"
+                    },
+                    "timeZone": {
+                        "description": "The timezone where the webinar is taking place",
+                        "type": "string"
+                    },
+                    "webinarKey": {
+                        "description": "The unique key of the webinar",
+                        "type": "integer"
+                    }
+                }
+            },
+            "WebinarReqCreate": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "A short description of the webinar",
+                        "type": "string"
+                    },
+                    "subject": {
+                        "description": "The webinar subject",
+                        "type": "string"
+                    },
+                    "times": {
+                        "description": "Array with startTime and endTime for the webinar sessions",
+                        "type": "array"
+                    },
+                    "timeZone": {
+                        "description": "The timezone where the webinar is taking place",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
