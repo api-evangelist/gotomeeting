@@ -1,0 +1,1046 @@
+{
+    "id": "63472762e119921092bc6455d6dbd5ef",
+    "name": "Go To Webinar",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "58e7e66994bbff8e050d32288f6117af",
+            "name": "Get all webinars for an account",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/accounts\/{accountKey}\/webinars",
+            "description": "Retrieves the list of webinars for an account within a given date range. __*Page*__ and __*size*__ parameters are optional. Default __*page*__ is 0 and default __*size*__ is 20. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "fromTime",
+                    "description": "A required start of datetime range in ISO8601 UTC format, e.g. 2015-07-13T10:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "toTime",
+                    "description": "A required end of datetime range in ISO8601 UTC format, e.g. 2015-07-13T22:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "page",
+                    "description": "The page number to be displayed. The first page is 0.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "size",
+                    "description": "The size of the page.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "81fb317ac24da233690dab25790d43ac",
+            "name": "Get historical webinars",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/historicalWebinars",
+            "description": "Returns details for completed webinars for the specified organizer and completed webinars of other organizers where the specified organizer is a co-organizer.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "fromTime",
+                    "description": "A required start of datetime range in ISO8601 UTC format, e.g. 2015-07-13T10:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "toTime",
+                    "description": "A required end of datetime range in ISO8601 UTC format, e.g. 2015-07-13T22:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "25ad5742488b2b8cffb7cad898d6a14a",
+            "name": "Get organizer sessions",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/sessions",
+            "description": "Retrieve all completed sessions of all the webinars of a given organizer.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "fromTime",
+                    "description": "A required start of datetime range in ISO8601 UTC format, e.g. 2015-07-13T10:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "toTime",
+                    "description": "A required end of datetime range in ISO8601 UTC format, e.g. 2015-07-13T22:00:00Z",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "096e8af5cc132b6e6f090a87e71e57c7",
+            "name": "Get upcoming webinars",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/upcomingWebinars",
+            "description": "Returns webinars scheduled for the future for the specified organizer and webinars of other organizers where the specified organizer is a co-organizer.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "110e1e101702412d86aca1879ed6eab5",
+            "name": "Get all webinars",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars",
+            "description": "Returns webinars scheduled for the future for a specified organizer.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "ddce36631aab6653804724832ab3651b",
+            "name": "Create webinar",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars",
+            "description": "Creates a single session webinar, a sequence of webinars or a series of webinars depending on the type field in the body: \"single_session\" creates a single webinar session, \"sequence\" creates a webinar with multiple meeting times where attendees are expected to be the same for all sessions, and \"series\" creates a webinar with multiple meetings times where attendees choose only one to attend. The default, if no type is declared, is single_session. A sequence webinar requires a \"recurrenceStart\" o",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "The webinar details",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "3516ec1c22bff880edf50a43c59ea84f",
+            "name": "Cancel webinar",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}",
+            "description": "Cancels a specific webinar. If the webinar is a series or sequence, this call deletes all scheduled sessions. To send cancellation emails to registrants set sendCancellationEmails=true in the request. When the cancellation emails are sent, the default generated message is used in the cancellation email body.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "sendCancellationEmails",
+                    "description": "Indicates whether cancellation notice emails should be sent. The default value is false",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "165b0dd94b004fffff596692596e5fbf",
+            "name": "Get webinar",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}",
+            "description": "Retrieve information on a specific webinar. If the type of the webinar is 'sequence', a sequence of future times will be provided. Webinars of type 'series' are treated the same as normal webinars - each session in the webinar series has a different webinarKey. If an organizer cancels a webinar, then a request to get that webinar would return a '404 Not Found' error.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "5146f7bbea7d9ae53284d5df4ab64ed4",
+            "name": "Update webinar",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}",
+            "description": "Updates a webinar. The call requires at least one of the parameters in the request body. The request completely replaces the existing session, series, or sequence and so must include the full definition of each as for the Create call. Set notifyParticipants=true to send update emails to registrants.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "notifyParticipants",
+                    "description": "Defines whether to send notifications to participants",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "body",
+                    "description": "The webinar details",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "8a41e55de8f39249149ee790b612d934",
+            "name": "Get attendees for all webinar sessions",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/attendees",
+            "description": "Returns all attendees for all sessions of the specified webinar.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "911c2da912348a81da32e88f39f8ae3c",
+            "name": "Get audio information",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/audio",
+            "description": "Retrieves the audio\/conferencing information for a specific webinar.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "3c0bdf64f9805a98c466e82344d8f908",
+            "name": "Update audio information",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/audio",
+            "description": "Updates the audio\/conferencing settings for a specific webinar",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "notifyParticipants",
+                    "description": "Defines whether to send notifications to participants",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "body",
+                    "description": "The webinar details",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "86ba18c2dc32f6a609e03ac2a7bcfb95",
+            "name": "Get co-organizers",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/coorganizers",
+            "description": "Returns the co-organizers for the specified webinar. The original organizer who created the webinar is filtered out of the list. If the webinar has no co-organizers, an empty array is returned. Co-organizers that do not have a GoToWebinar account are returned as external co-organizers. For those organizers no surname is returned.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "f9cceadbe41ec2b1382bcc2139eaa97a",
+            "name": "Create co-organizers",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/coorganizers",
+            "description": "Creates co-organizers for the specified webinar. For co-organizers that have a GoToWebinar account you have to set the parameter 'external' to 'false'. In this case you have to pass the parameter 'organizerKey' only. For co-organizers that have no GoToWebinar account you have to set the parameter 'external' to 'true'. In this case you have to pass the parameters 'givenName' and 'email'. Since there is no parameter for 'surname' you should pass first and last name to the parameter 'givenName'.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "The webinar details",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "274642574ac29817212adefc93bfcfcb",
+            "name": "Delete co-organizer",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/coorganizers\/{coorganizerKey}",
+            "description": "Deletes an internal co-organizer specified by the coorganizerKey (memberKey).",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "external",
+                    "description": "By default only internal co-organizers (with a GoToWebinar account) can be deleted. If you want to use this call for external co-organizers you have to set this parameter to 'true'.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "96ffdf2e5273def9bd5cea9c772df0ea",
+            "name": "Resend invitation",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/coorganizers\/{coorganizerKey}\/resendInvitation",
+            "description": "Resends an invitation email to the specified co-organizer",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "external",
+                    "description": "By default only internal co-organizers (with a GoToWebinar account) can be deleted. If you want to use this call for external co-organizers you have to set this parameter to 'true'.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "9bf606604f130d6bebf0f84a27e5efb6",
+            "name": "Get webinar meeting times",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/meetingtimes",
+            "description": "Retrieves the meeting times for a webinar.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "b46e64764a5d84e3ef7603c547304ceb",
+            "name": "Get webinar panelists",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/panelists",
+            "description": "Retrieves all the panelists for a specific webinar.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "c003b3be6b63cf5aa2f698201815c072",
+            "name": "Create Panelists",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/panelists",
+            "description": "Create panelists for a specified webinar",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "body",
+                    "description": "The webinar details",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "735268aaebec9961d088167efe739cd9",
+            "name": "Delete webinar panelist",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/panelists\/{panelistKey}",
+            "description": "Removes a webinar panelist.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "a695cb47738dde05801832db166102b3",
+            "name": "Resend panelist invitation",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/panelists\/{panelistKey}\/resendInvitation",
+            "description": "Resend the panelist invitation email.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "9ddf8dc7792792bb2df49491455e79c8",
+            "name": "Get performance for all webinar sessions",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/performance",
+            "description": "Gets performance details for all sessions of a specific webinar.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "ac4299b4cd9165a1f55126ebf9ebf44d",
+            "name": "Get registrants",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/registrants",
+            "description": "Retrieve registration details for all registrants of a specific webinar. Registrant details will not include all fields captured when creating the registrant. To see all data, use the API call 'Get Registrant'. Registrants can have one of the following states; <br>WAITING - registrant registered and is awaiting approval (where organizer has required approval), <br>APPROVED - registrant registered and is approved, and <br>DENIED - registrant registered and was denied.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "565a09ea47f7947b7755bb19056834b0",
+            "name": "Create registrant",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/registrants",
+            "description": "Register an attendee for a scheduled webinar. The response contains the registrantKey and join URL for the registrant. An email will be sent to the registrant unless the organizer turns off the confirmation email setting from the GoToWebinar website. Please note that you must provide all required fields including custom fields defined during the webinar creation. Use the API call 'Get registration fields' to get a list of all fields, if they are required, and their possible values. At this time ",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Accept",
+                    "description": "Set to 'application\/vnd.citrix.g2wapi-v1.1+json' to make a registration using fields (custom or default) additional to the basic ones.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "resendConfirmation",
+                    "description": "Indicates whether the confirmation email should be resent when a registrant is re-registered. The default value is false.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "body",
+                    "description": "The webinar details",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "a1807edf0fd511ae37ee82ff35bf0fdb",
+            "name": "Get registration fields",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/registrants\/fields",
+            "description": "Retrieve required, optional registration, and custom questions for a specified webinar.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "3dcb5958ffea1b7a42c745415e472740",
+            "name": "Delete registrant",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/registrants\/{registrantKey}",
+            "description": "Removes a webinar registrant from current registrations for the specified webinar. The webinar must be a scheduled, future webinar.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "4c5a3fe04a0371bb4ef7554903f2e121",
+            "name": "Get registrant",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/registrants\/{registrantKey}",
+            "description": "Retrieve registration details for a specific registrant.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "d3b468599d213c6c878a8b50414ff754",
+            "name": "Get webinar sessions",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions",
+            "description": "Retrieves details for all past sessions of a specific webinar.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "407fa8b0f8ee2c57dc6c2c7b78216999",
+            "name": "Get webinar session",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}",
+            "description": "Retrieves attendance details for a specific webinar session that has ended. If attendees attended the session ('registrantsAttended'), specific attendance details, such as attendenceTime for a registrant, will also be retrieved. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "22d4d28de84f3ddacce3bd176a2a9ea1",
+            "name": "Get session attendees",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees",
+            "description": "Retrieve details for all attendees of a specific webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "1ca83413bf68ef85d5d29dbe5eb61ccc",
+            "name": "Get attendee",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees\/{registrantKey}",
+            "description": "Retrieve registration details for a particular attendee of a specific webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "5d725fdb24f18a31de6228c1b2fe4554",
+            "name": "Get attendee poll answers",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees\/{registrantKey}\/polls",
+            "description": "Get poll answers from a particular attendee of a specific webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "8ea192fe639251f6e65dc31e1ee53d3a",
+            "name": "Get attendee questions",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees\/{registrantKey}\/questions",
+            "description": "Get questions asked by an attendee during a webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "d6b13f88a632373f7c28f8ed2a57b7e6",
+            "name": "Get attendee survey answers",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees\/{registrantKey}\/surveys",
+            "description": "Retrieve survey answers from a particular attendee during a webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "522e2652873a597e0ba5ea97c9450204",
+            "name": "Get session performance",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/performance",
+            "description": "Get performance details for a session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "12395654b8a2cb3795aac1fdb920f06d",
+            "name": "Get session polls",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/polls",
+            "description": "Retrieve all collated attendee questions and answers for polls from a specific webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "4ee692307a32f633a8678a258c7bceaf",
+            "name": "Get session questions",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/questions",
+            "description": "Retrieve questions and answers for a past webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        },
+        {
+            "id": "64ab21f1e6c00b3e004c82f8e637a5ee",
+            "name": "Get session surveys",
+            "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/surveys",
+            "description": "Retrieve surveys for a past webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "rawModeData": ""
+        }
+    ]
+}
