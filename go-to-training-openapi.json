@@ -1,0 +1,632 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Go To Training",
+        "description": "The GoToTraining API enables developers to use the stable and robust GoToTraining functionality as the basis for online trainings in a proprietary learning management system. The GoToTraining APIs provide the ability to access the scheduling, registration, management, and reporting functions of GoToTraining from external applications. With the ability to tightly integrate GoToTraining into your learning infrastructure, you can offer your learners a seamless user experience and provide them with a market leading virtual classroom environment.",
+        "termsOfService": "https:\/\/developer.citrixonline.com\/terms-use"
+    },
+    "servers": [
+        "httpsapi.citrixonline.com\/G2T\/rest"
+    ],
+    "paths": {
+        "\/accounts\/{accountKey}\/organizers": {
+            "get": {
+                "summary": "DEPRECATED: Get Organizers",
+                "description": "DEPRECATED: Please use the Admin API call 'Get all users' instead. For details see https:\/\/developer.citrixonline.com\/get-all-users.",
+                "operationId": "GetAllOrganisers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "accountKey",
+                        "in": "path",
+                        "description": "The key of the multi-user account"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/trainings": {
+            "get": {
+                "summary": "Get Trainings",
+                "description": "This call retrieves information on all scheduled trainings for a given organizer. The trainings are returned in the order in which they were created. Completed trainings are not included; ongoing trainings with past sessions are included along with the past sessions. If the organizer does not have any scheduled trainings, the response will be empty.",
+                "operationId": "GetAllTrainings",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Create Training",
+                "description": "Schedules a training of one or more sessions. The call requires a training's name, at least one start and end time, and optionally may include additional sessions, a description, additional organizers (presenters), and registration settings. You can only add organizers to a training if you have a multi-user account. Once a training has been created with this method, you can accept registrations to the training. Registration is for the entire training - all sessions. (The GoToTraining admin site ",
+                "operationId": "ScheduleTraining",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the training to create"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/trainings\/{trainingKey}": {
+            "delete": {
+                "summary": "Delete Training",
+                "description": "Deletes a scheduled or completed training. For scheduled trainings, it deletes all scheduled sessions of the training. For completed trainings, the sessions remain in the database. No email is sent to organizers or registrants, but when participants attempt to start or join the training, they are directed to a page that states: Training Not Found: The training you are trying to join is no longer available.",
+                "operationId": "CancelTraining",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "get": {
+                "summary": "Get Training",
+                "description": "Uses the organizer key and training key to retrieve information on a scheduled training.",
+                "operationId": "GetTraining",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/manageUrl": {
+            "get": {
+                "summary": "Get Management URL for Training",
+                "description": "A request for a direct URL to the admin portal for a specific training. The request identifies the organizer and the training; the response provides a link the organizer can use to manage or launch the training in the admin portal. The training organizer will be required to log in. You can schedule and manage the training (e.g., add tests, polls and training materials) from the URL provided in the response.",
+                "operationId": "GetManageTrainingURL",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/nameDescription": {
+            "put": {
+                "summary": "Update Training Name and Description",
+                "description": "Request to update a scheduled training name and description.",
+                "operationId": "UpdateTrainingNameDescription",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the training to create"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/organizers": {
+            "get": {
+                "summary": "Get Training Organizers",
+                "description": "Retrieves organizer details for a specific training. This is only applicable to multi-user accounts with sharing enabled (co-organizers).",
+                "operationId": "GetOrganisersForTraining",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "put": {
+                "summary": "Update Training Organizers",
+                "description": "Replaces the co-organizers for a specific training. The scheduling organizer cannot be unassigned. Organizers will be notified via email if the notifyOrganizers parameter is set to true. Replaced organizers are not notified. This method is only applicable to multi-user accounts with sharing enabled (co-organizers).",
+                "operationId": "UpdateOrganisersForTraining",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the training to create"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/registrants": {
+            "get": {
+                "summary": "Get Training Registrants",
+                "description": "Retrieves details on all registrants for a specific training. Registrants can be:<br>WAITING - registrant registered and is awaiting approval (where organizer has required approval)<br>APPROVED - registrant registered and is approved<br>DENIED - registrant registered and was not approved.<br><br>IMPORTANT: The registrant data caches are typically updated immediately and the data will be returned in the response. However, the update can take as long as two hours.",
+                "operationId": "GetRegistrants",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "post": {
+                "summary": "Register for Training",
+                "description": "Registers one person, identified by a unique email address, for a training. Approval is automatic unless payment or approval is required. The response contains the Confirmation page URL and Join URL for the registrant. NOTE: If some registrants do not receive a confirmation email, the emails could be getting blocked by their email server due to spam filtering or a grey-listing setting.",
+                "operationId": "RegisterForTraining",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the training to create"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/registrants\/{registrantKey}": {
+            "delete": {
+                "summary": "Cancel Registration",
+                "description": "This call cancels a registration in a scheduled training for a specific registrant. If the registrant has paid for the training, a cancellation cannot be completed with this method; it must be completed on the external admin site. No notification is sent to the registrant or the organizer by default. The registrant can re-register if needed.",
+                "operationId": "CancelRegistration",
+                "deprecated": 0,
+                "parameters": []
+            },
+            "get": {
+                "summary": "Get Registrant",
+                "description": "Retrieves details for specific registrant in a specific training. Registrants can be:<br>WAITING - registrant registered and is awaiting approval (where organizer has required approval)<br>APPROVED - registrant registered and is approved<br>DENIED - registrant registered and was not approved.<br><br>IMPORTANT: The registrant data caches are typically updated immediately and the data will be returned in the response. However, the update can take as long as two hours.",
+                "operationId": "GetRegistrant",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/registrationSettings": {
+            "put": {
+                "summary": "Update Training Registration Settings",
+                "description": "An API request to automatically enable or disable web registrations and confirmation emails to registrants.",
+                "operationId": "UpdateRegistrationSettingsForTraining",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the training to create"
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/startUrl": {
+            "get": {
+                "summary": "Get Start Url",
+                "description": "Returns a URL that can be used to start a training. When this URL is opened in a web browser, the GoToTraining client will be downloaded and launched and the training will start after the organizer logs in with its credentials.",
+                "operationId": "GetStartUrl",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/times": {
+            "put": {
+                "summary": "Update Training Times",
+                "description": " A request to update a scheduled training's start and end times. If the request contains 'notifyTrainers = true' and 'notifyRegistrants = true', both organizers and registrants are notified. The response provides the number of notified trainers and registrants.",
+                "operationId": "UpdateTrainingTimes",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the training to create"
+                    }
+                ]
+            }
+        },
+        "\/reports\/organizers\/{organizerKey}\/sessions": {
+            "post": {
+                "summary": "Get Sessions by Date Range",
+                "description": "This call returns all session details over a given date range for a given organizer. A session is a completed training event.",
+                "operationId": "GetSessionDetailsForDateRange",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "The details of the training to create"
+                    }
+                ]
+            }
+        },
+        "\/reports\/organizers\/{organizerKey}\/sessions\/{sessionKey}\/attendees": {
+            "get": {
+                "summary": "Get Attendance Details",
+                "description": "This call retrieves a list of registrants from a specific completed training session. The response includes the registrants' email addresses, and if they attended, it includes the duration of each period of their attendance in minutes, and the times at which they joined and left. If a registrant does not attend, they appear at the bottom of the listing with timeInSession = 0.",
+                "operationId": "GetAttendanceDetails",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "sessionKey",
+                        "in": "path",
+                        "description": "The key of the training session"
+                    }
+                ]
+            }
+        },
+        "\/reports\/organizers\/{organizerKey}\/trainings\/{trainingKey}": {
+            "get": {
+                "summary": "Get Sessions By Training",
+                "description": "This call returns session details for a given training. A session is a completed training event. Each training may contain one or more sessions.",
+                "operationId": "GetSessionDetailsForTraining",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/trainings\/{trainingKey}\/recordings": {
+            "get": {
+                "summary": "Get Online Recordings for Training",
+                "description": "This call retrieves information on all online recordings for a given training. If there are none, it returns an empty list.",
+                "operationId": "GetRecordingsForTraining",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/trainings\/{trainingKey}\/recordings\/{recordingId}": {
+            "get": {
+                "summary": "Get Download for Online Recordings",
+                "description": "This call provides the download for the given recording by returning a 302 redirect to the original file.",
+                "operationId": "GetRecordingDownloadById",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "recordingId",
+                        "in": "path",
+                        "description": "the unique id of the recording"
+                    }
+                ]
+            }
+        },
+        "\/trainings\/{trainingKey}\/start": {
+            "get": {
+                "summary": "Start Training",
+                "description": "Returns a URL that can be used to start a training. When this URL is opened in a web browser, the GoToTraining client will be downloaded and launched and the training will start. A login of the organizer is not required.",
+                "operationId": "StartTraining",
+                "deprecated": 0,
+                "parameters": []
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Attendance": {
+                "type": "object",
+                "properties": {
+                    "joinTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "leaveTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeInPartOfSession": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Attendee": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "givenName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "inSessionTimes": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "surname": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeInSession": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "DateTimeRange": {
+                "type": "object",
+                "properties": {
+                    "endDate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startDate": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "HostUrl": {
+                "type": "object",
+                "properties": {
+                    "hostURL": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "NotifiedParties": {
+                "type": "object",
+                "properties": {
+                    "notifiedRegistrants": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "notifiedTrainers": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Organizer": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "givenName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "surname": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Recording": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "downloadUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endDate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "recordingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrationUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "startDate": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RecordingsListForTraining": {
+                "type": "object",
+                "properties": {
+                    "recordingList": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "trainingKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Registrant": {
+                "type": "object",
+                "properties": {
+                    "confirmationUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "givenName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "joinUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrantKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrationDate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "surname": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RegistrantCreated": {
+                "type": "object",
+                "properties": {
+                    "confirmationUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "joinUrl": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "registrantKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RegistrantReqCreate": {
+                "type": "object",
+                "properties": {
+                    "email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "givenName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "surname": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "RegistrationSettings": {
+                "type": "object",
+                "properties": {
+                    "disableConfirmationEmail": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "disableWebRegistration": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Session": {
+                "type": "object",
+                "properties": {
+                    "attendanceCount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "duration": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizers": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionEndTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionKey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sessionStartTime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "trainingName": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "Training": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizers": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeZone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "times": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "trainingId": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "trainingKey": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TrainingNameDescription": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TrainingOrganizers": {
+                "type": "object",
+                "properties": {
+                    "notifyOrganizers": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizers": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TrainingReqCreate": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizers": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeZone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "times": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "TrainingTimes": {
+                "type": "object",
+                "properties": {
+                    "notifyRegistrants": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "notifyTrainers": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timeZone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "times": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
