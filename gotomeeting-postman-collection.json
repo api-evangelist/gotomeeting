@@ -1,0 +1,1066 @@
+{
+    "id": "4d5f6d41c07da9ad06ed7197fdd053fe",
+    "name": "GoToMeeting",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "5a9c9a7868eabc6c2a37cc1beaefb218",
+            "name": "Upcoming meetings by group",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/groups\/{groupKey}\/upcomingMeetings",
+            "description": "Get upcoming meetings for a specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "groupKey",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "5ddb6cb220e540ffcf952c81b0db7a2d",
+            "name": "Organizer",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/organizers\/{organizerKey}",
+            "description": "Gets the individual organizer specified by the organizer's email address. If an email address is not specified, all organizers are returned. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "organizerKey",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "a637e8db9fc94fc7d1f2b763ecd67e88",
+            "name": "Organizer",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/organizers\/{organizerKey}",
+            "description": "Updates the products of the specified organizer. To add a product (G2M, G2W, G2T, OPENVOICE) for the organizer, the call must be sent once for each product you want to add. To remove all products for the organizer, set status to 'suspended'. The call is limited to users with the admin role.\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"firstName\"\t\t\t\"First\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"lastName\"\t\t\t\"Last\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"organizerEmail\"\t\t\t\"valid.org@email.com\"\t\t\tString ",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "organizerKey",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "68467c6d63e05f9d5b07014288cb8d4f",
+            "name": "Organizer",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/organizers\/{organizerKey}",
+            "description": "Deletes the individual organizer specified by the organizer key. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "organizerKey",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "c65f2c3f1f91acd472c9cb23ee5bb513",
+            "name": "Meeting",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/meetings",
+            "description": "Create a new meeting based on the parameters specified.\r\n\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"subject\"\t\t\t\"subject\"\t\t\tString - max 100 char.\t\t\r\n\t\t\"starttime\"\t\t\t\"2019-05-10T12:00:00Z\"\t\t\t{YYYY}-{MM}-{DD}T{HH}:{MM}:{SS}Z format, UTC only\t\t\r\n\t\t\"endtime\"\t\t\t\"2019-05-10T13:00:00Z\"\t\t\t{YYYY}-{MM}-{DD}T{HH}:{MM}:{SS}Z format, UTC only\t\t\r\n\t\t\"passwordRequired\"\t\t\tFALSE\t\t\tBoolean: true, false\t\t\r\n\t\t\"conferencecallinfo\"\t\t\t\"hybrid\"\t\t\tMust be one of: Hybrid, PTSN, Free, Private, VoIP.\t\t\r\n\t\t\"timezoneke",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "68e7b9a2d4baa448d7ca573f31755b7c",
+            "name": "Groups",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/groups",
+            "description": "List all groups for an account. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "cbbd4837e940cb64efb0c1871f861e53",
+            "name": "Organizer by email",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/organizers",
+            "description": "Gets the individual organizer specified by the organizer's email address. If an email address is not specified, all organizers are returned. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "email",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "d71422e5bbb1e84ff75855c6f215d21b",
+            "name": "Organizer",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/organizers",
+            "description": "Creates a new organizer and sends an email to the email address defined in the request. This API call is only available to users with the admin role. You may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType, to create organizers for those products. A G2W or G2T organizer will also have access to G2M.\r\n\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"firstName\"\t\t\t\"First\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"lastName\"\t\t\t\"Last\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"organizerEmail\"\t\t\t\"valid.org@em",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "03a9ad1e8e20bfcc482d67b99129df1e",
+            "name": "Organizer by email",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/organizers",
+            "description": "Deletes the individual organizer specified by the email address. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "email",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "0bc078f0236c73a8b77f31cc87e3e1c6",
+            "name": "Historical meetings",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/historicalMeetings",
+            "description": "Get historical meetings for the currently authenticated organizer that started within the specified date\/time range. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "startDate",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "endDate",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "9e35309a8650d649828afe12566461ec",
+            "name": "Attendees by meeting",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/meetings\/{meetingInstanceKey}\/attendees",
+            "description": "List all attendees for specified meetingId of historical meeting. The historical meetings can be fetched using 'Get historical meetings', 'Get historical meetings by organizer', and 'Get historical meetings by group'. For users with the admin role this call returns attendees for any meeting. For any other user the call will return attendees for meetings on which the user is a valid organizer.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "meetingInstanceKey",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "c29f6a9db19500333451b425a31b5d0c",
+            "name": "Meeting link",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/meetings\/{meetingId}\/start",
+            "description": "Returns a host URL that can be used to start a meeting. When this URL is opened in a web browser, the GoToMeeting client will be downloaded and launched and the meeting will start. The end user is not required to login to a client.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "meetingId",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "977bbeea077ead3491688b1b9f0b6765",
+            "name": "Attendees by organizer",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/organizers\/{organizerKey}\/attendees",
+            "description": "Lists all attendees for all meetings within a specified date range for a specified organizer. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "starttime",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "endDate",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "organizerKey",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "58f3d6868f4922f0f685e45ebef31eb2",
+            "name": "Organizers by group",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/groups\/{groupkey}\/organizers",
+            "description": "Returns all the organizers within a specific group. This API call is only available to users with the admin role.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "groupKey",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "bd8cff2f6c5a0a554afe7b0d6954c106",
+            "name": "Organizer in group",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/groups\/{groupkey}\/organizers",
+            "description": "Creates a new organizer and sends an email to the email address defined in request. This API call is only available to users with the admin role. You may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType variables, creating organizers for those products. A G2W or G2T organizer will also have access to G2M.\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"organizerEmail\"\t\t\t\"valid.org@email.com\"\t\t\tString with valid email syntax\t\t\r\n\t\t\"firstName\"\t\t\t\"First\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"las",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "groupKey",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "70ac4546b26f778df31ff70463a32961",
+            "name": "Meeting",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/meetings\/{meetingId}",
+            "description": "Returns the meeting details for the specified meeting.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "meetingId",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "8d2d31da6869f7f77975e1ebe38576a7",
+            "name": "Meeting",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/meetings\/{meetingId}",
+            "description": "Updates an existing meeting specified by meetingId.\r\n\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"subject\"\t\t\t\"subject\"\t\t\tString - max 100 char.\t\t\r\n\t\t\"starttime\"\t\t\t\"2019-05-10T12:00:00Z\"\t\t\t{YYYY}-{MM}-{DD}T{HH}:{MM}:{SS}Z format, UTC only\t\t\r\n\t\t\"endtime\"\t\t\t\"2019-05-10T13:00:00Z\"\t\t\t{YYYY}-{MM}-{DD}T{HH}:{MM}:{SS}Z format, UTC only\t\t\r\n\t\t\"passwordRequired\"\t\t\tFALSE\t\t\tBoolean: true, false\t\t\r\n\t\t\"conferencecallinfo\"\t\t\t\"hybrid\"\t\t\tMust be one of: Hybrid, PTSN, Free, Private, VoIP.\t\t\r\n\t\t\"timezonekey\"\t\t",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Body",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "meetingId",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "f2baa1576d58e574f5b24c15c2f68de0",
+            "name": "Meeting",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/meetings\/{meetingId}",
+            "description": "Deletes the meeting identified by the meetingId.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "meetingId",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "606d289665b6813a7eb648ba26ebd04d",
+            "name": "Attendees by group",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/groups\/{groupkey}\/attendees",
+            "description": "Returns all attendees for all meetings within specified date range held by organizers within the specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "startDate",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "endDate",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "groupKey",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "905bab2a83316cf5c7d61e978dcc2e99",
+            "name": "Upcoming meetings",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/upcomingMeetings",
+            "description": "Gets upcoming meetings for the current authenticated organizer.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "c5e6d877c8edf82b29ec6ddf902b0198",
+            "name": "Historical meetings by organizer",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/organizers\/{organizerKey}\/historicalMeetings",
+            "description": "Get historical meetings for the specified organizer that started within the specified date\/time range. Meetings which are still ongoing at the time of the request are not included in the result.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "startDate",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "endDate",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "organizerKey",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        },
+        {
+            "id": "a42773047a952747449c5398cbc81a16",
+            "name": "Historical meetings by group",
+            "url": "httpsapi.getgo.com\/G2M\/rest\/groups\/{groupkey}\/historicalMeetings",
+            "description": "Get historical meetings for the specified group that started within the specified date\/time range. This API call is only available to users with the admin role. This API call is restricted to groups with a maximum of 50 organizers. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "startDate",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "endDate",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Content",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "Accept",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "groupKey",
+                    "description": "",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "rawModeData": ""
+        }
+    ]
+}
