@@ -1,0 +1,317 @@
+{
+    "name": "GoToMeeting",
+    "description": "Citrix enables business mobility through the secure delivery of apps and data to any device on any network.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/731-gotomeeting.jpg",
+    "tags": [
+        "api provider",
+        "conferences",
+        "have api",
+        "have swagger",
+        "meetings",
+        "networks",
+        "office",
+        "relative data",
+        "service api"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/gotomeeting\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Go To Training",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/731-gotomeeting.jpg",
+            "humanURL": "http:\/\/citrixonline.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/go-to-training-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/go-to-training.json"
+                }
+            ]
+        },
+        {
+            "name": "Go To Assist Seeit",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/731-gotomeeting.jpg",
+            "humanURL": "http:\/\/citrixonline.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/go-to-assist-seeit-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/go-to-assist-seeit.json"
+                }
+            ]
+        },
+        {
+            "name": "SCIM",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/731-gotomeeting.jpg",
+            "humanURL": "http:\/\/citrixonline.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/scim-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/scim.json"
+                }
+            ]
+        },
+        {
+            "name": "GoToMeeting REST API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/731-gotomeeting.jpg",
+            "humanURL": "http:\/\/citrixonline.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/gotomeeting-rest-api-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/gotomeeting-rest-api.json"
+                }
+            ]
+        },
+        {
+            "name": "GoToWebinar REST API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/731-gotomeeting.jpg",
+            "humanURL": "http:\/\/citrixonline.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/gotowebinar-rest-api-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/gotowebinar-rest-api.json"
+                }
+            ]
+        },
+        {
+            "name": "Go To Webinar",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/731-gotomeeting.jpg",
+            "humanURL": "http:\/\/citrixonline.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/go-to-webinar-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/go-to-webinar.json"
+                }
+            ]
+        },
+        {
+            "name": "Go To Meeting",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/731-gotomeeting.jpg",
+            "humanURL": "http:\/\/citrixonline.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/go-to-meeting-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/go-to-meeting.json"
+                }
+            ]
+        },
+        {
+            "name": "GoToMeeting",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/731-gotomeeting.jpg",
+            "humanURL": "http:\/\/citrixonline.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/gotomeeting-openapi.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/gotomeeting.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Base",
+            "url": "https:\/\/api.citrixonline.com"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/blogs.citrix.com\/"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/citrix-systems"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/citrix-systems"
+        },
+        {
+            "type": "Developers",
+            "url": "https:\/\/developer.citrixonline.com\/"
+        },
+        {
+            "type": "Email",
+            "url": "secure@citrix.com"
+        },
+        {
+            "type": "Email",
+            "url": "americasconsulting@citrix.com"
+        },
+        {
+            "type": "Email",
+            "url": "poland@citrix.com"
+        },
+        {
+            "type": "Email",
+            "url": "citrix_ru@citrix.com"
+        },
+        {
+            "type": "Email",
+            "url": "Licensing-emea@eu.citrix.com"
+        },
+        {
+            "type": "Email",
+            "url": "eduardo.fleites@citrix.com"
+        },
+        {
+            "type": "Email",
+            "url": "CitrixReady@citrix.com"
+        },
+        {
+            "type": "Email",
+            "url": "CSP@citrix.com"
+        },
+        {
+            "type": "Email",
+            "url": "partneroperationsEMEA@eu.citrix.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/citrix"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-04-12-07-11.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-04-09-17-00.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-04-14-50-37.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-04-14-56-24.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-03-13-08-16.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-03-13-10-00.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-03-13-10-07.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-03-13-10-11.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-03-13-10-17.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-03-13-10-31.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-03-13-10-48.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-03-13-11-04.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-03-13-11-09.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-03-13-13-51.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-04-02-47-28.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-04-08-21-28.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-04-08-22-39.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/731-2019-09-04-02-53-13.json"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/gotomeeting"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/citrix"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/citrixonline.com"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/citrixonline.com"
+        }
+    ]
+}
