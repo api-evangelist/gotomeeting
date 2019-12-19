@@ -1,0 +1,674 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "",
+        "title": "GoToMeeting",
+        "description": "https:\/\/goto-developer.logmeininc.com\/how-get-access-token-and-organizer-key",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httpsapi.getgo.com\/G2M\/rest"
+    ],
+    "paths": {
+        "\/groups\/{groupKey}\/upcomingMeetings": {
+            "get": {
+                "summary": "Upcoming meetings by group",
+                "description": "Get upcoming meetings for a specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
+                "operationId": "GroupsUpcomingMeetingsByGroupKeyGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "groupKey",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}": {
+            "get": {
+                "summary": "Organizer",
+                "description": "Gets the individual organizer specified by the organizer's email address. If an email address is not specified, all organizers are returned. This API call is only available to users with the admin role.",
+                "operationId": "OrganizersByOrganizerKeyGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "organizerKey",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Organizer",
+                "description": "Updates the products of the specified organizer. To add a product (G2M, G2W, G2T, OPENVOICE) for the organizer, the call must be sent once for each product you want to add. To remove all products for the organizer, set status to 'suspended'. The call is limited to users with the admin role.\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"firstName\"\t\t\t\"First\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"lastName\"\t\t\t\"Last\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"organizerEmail\"\t\t\t\"valid.org@email.com\"\t\t\tString ",
+                "operationId": "OrganizersByOrganizerKeyPut",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "organizerKey",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "Organizer",
+                "description": "Deletes the individual organizer specified by the organizer key. This API call is only available to users with the admin role.",
+                "operationId": "OrganizersByOrganizerKeyDelete",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "organizerKey",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/meetings": {
+            "post": {
+                "summary": "Meeting",
+                "description": "Create a new meeting based on the parameters specified.\r\n\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"subject\"\t\t\t\"subject\"\t\t\tString - max 100 char.\t\t\r\n\t\t\"starttime\"\t\t\t\"2019-05-10T12:00:00Z\"\t\t\t{YYYY}-{MM}-{DD}T{HH}:{MM}:{SS}Z format, UTC only\t\t\r\n\t\t\"endtime\"\t\t\t\"2019-05-10T13:00:00Z\"\t\t\t{YYYY}-{MM}-{DD}T{HH}:{MM}:{SS}Z format, UTC only\t\t\r\n\t\t\"passwordRequired\"\t\t\tFALSE\t\t\tBoolean: true, false\t\t\r\n\t\t\"conferencecallinfo\"\t\t\t\"hybrid\"\t\t\tMust be one of: Hybrid, PTSN, Free, Private, VoIP.\t\t\r\n\t\t\"timezoneke",
+                "operationId": "MeetingsPost",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Body",
+                        "in": "body",
+                        "description": ""
+                    },
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/groups": {
+            "get": {
+                "summary": "Groups",
+                "description": "List all groups for an account. This API call is only available to users with the admin role.",
+                "operationId": "GroupsGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/organizers": {
+            "get": {
+                "summary": "Organizer by email",
+                "description": "Gets the individual organizer specified by the organizer's email address. If an email address is not specified, all organizers are returned. This API call is only available to users with the admin role.",
+                "operationId": "OrganizersGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Organizer",
+                "description": "Creates a new organizer and sends an email to the email address defined in the request. This API call is only available to users with the admin role. You may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType, to create organizers for those products. A G2W or G2T organizer will also have access to G2M.\r\n\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"firstName\"\t\t\t\"First\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"lastName\"\t\t\t\"Last\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"organizerEmail\"\t\t\t\"valid.org@em",
+                "operationId": "OrganizersPost",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Body",
+                        "in": "body",
+                        "description": ""
+                    },
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "Organizer by email",
+                "description": "Deletes the individual organizer specified by the email address. This API call is only available to users with the admin role.",
+                "operationId": "OrganizersDelete",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/historicalMeetings": {
+            "get": {
+                "summary": "Historical meetings",
+                "description": "Get historical meetings for the currently authenticated organizer that started within the specified date\/time range. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
+                "operationId": "HistoricalMeetingsGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/meetings\/{meetingInstanceKey}\/attendees": {
+            "get": {
+                "summary": "Attendees by meeting",
+                "description": "List all attendees for specified meetingId of historical meeting. The historical meetings can be fetched using 'Get historical meetings', 'Get historical meetings by organizer', and 'Get historical meetings by group'. For users with the admin role this call returns attendees for any meeting. For any other user the call will return attendees for meetings on which the user is a valid organizer.",
+                "operationId": "MeetingsAttendeesByMeetingInstanceKeyGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "meetingInstanceKey",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/meetings\/{meetingId}\/start": {
+            "get": {
+                "summary": "Meeting link",
+                "description": "Returns a host URL that can be used to start a meeting. When this URL is opened in a web browser, the GoToMeeting client will be downloaded and launched and the meeting will start. The end user is not required to login to a client.",
+                "operationId": "MeetingsStartByMeetingIdGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "meetingId",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/attendees": {
+            "get": {
+                "summary": "Attendees by organizer",
+                "description": "Lists all attendees for all meetings within a specified date range for a specified organizer. This API call is only available to users with the admin role.",
+                "operationId": "OrganizersAttendeesByOrganizerKeyGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "starttime",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "organizerKey",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/groups\/{groupkey}\/organizers": {
+            "get": {
+                "summary": "Organizers by group",
+                "description": "Returns all the organizers within a specific group. This API call is only available to users with the admin role.",
+                "operationId": "GroupsOrganizersByGroupkeyGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "groupKey",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Organizer in group",
+                "description": "Creates a new organizer and sends an email to the email address defined in request. This API call is only available to users with the admin role. You may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType variables, creating organizers for those products. A G2W or G2T organizer will also have access to G2M.\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"organizerEmail\"\t\t\t\"valid.org@email.com\"\t\t\tString with valid email syntax\t\t\r\n\t\t\"firstName\"\t\t\t\"First\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"las",
+                "operationId": "GroupsOrganizersByGroupKeyPost",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Body",
+                        "in": "body",
+                        "description": ""
+                    },
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "groupKey",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/meetings\/{meetingId}": {
+            "get": {
+                "summary": "Meeting",
+                "description": "Returns the meeting details for the specified meeting.",
+                "operationId": "MeetingsByMeetingIdGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "meetingId",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Meeting",
+                "description": "Updates an existing meeting specified by meetingId.\r\n\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"subject\"\t\t\t\"subject\"\t\t\tString - max 100 char.\t\t\r\n\t\t\"starttime\"\t\t\t\"2019-05-10T12:00:00Z\"\t\t\t{YYYY}-{MM}-{DD}T{HH}:{MM}:{SS}Z format, UTC only\t\t\r\n\t\t\"endtime\"\t\t\t\"2019-05-10T13:00:00Z\"\t\t\t{YYYY}-{MM}-{DD}T{HH}:{MM}:{SS}Z format, UTC only\t\t\r\n\t\t\"passwordRequired\"\t\t\tFALSE\t\t\tBoolean: true, false\t\t\r\n\t\t\"conferencecallinfo\"\t\t\t\"hybrid\"\t\t\tMust be one of: Hybrid, PTSN, Free, Private, VoIP.\t\t\r\n\t\t\"timezonekey\"\t\t",
+                "operationId": "MeetingsByMeetingIdPut",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Body",
+                        "in": "body",
+                        "description": ""
+                    },
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "meetingId",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "Meeting",
+                "description": "Deletes the meeting identified by the meetingId.",
+                "operationId": "MeetingsByMeetingIdDelete",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "meetingId",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/groups\/{groupkey}\/attendees": {
+            "get": {
+                "summary": "Attendees by group",
+                "description": "Returns all attendees for all meetings within specified date range held by organizers within the specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
+                "operationId": "GroupsAttendeesByGroupkeyGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "groupKey",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/upcomingMeetings": {
+            "get": {
+                "summary": "Upcoming meetings",
+                "description": "Gets upcoming meetings for the current authenticated organizer.",
+                "operationId": "UpcomingMeetingsGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/organizers\/{organizerKey}\/historicalMeetings": {
+            "get": {
+                "summary": "Historical meetings by organizer",
+                "description": "Get historical meetings for the specified organizer that started within the specified date\/time range. Meetings which are still ongoing at the time of the request are not included in the result.",
+                "operationId": "OrganizersHistoricalMeetingsByOrganizerKeyGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "organizerKey",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/groups\/{groupkey}\/historicalMeetings": {
+            "get": {
+                "summary": "Historical meetings by group",
+                "description": "Get historical meetings for the specified group that started within the specified date\/time range. This API call is only available to users with the admin role. This API call is restricted to groups with a maximum of 50 organizers. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
+                "operationId": "GroupsHistoricalMeetingsByGroupkeyGet",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "startDate",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "endDate",
+                        "in": "query",
+                        "description": ""
+                    },
+                    {
+                        "name": "Content",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": ""
+                    },
+                    {
+                        "name": "groupKey",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "MeetingRequest": {
+                "type": "object",
+                "properties": {
+                    "subject": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "starttime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "endtime": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "passwordrequired": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "conferencecallinfo": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "timezonekey": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "meetingtype": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "OrganizerRequest": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "organizerEmail": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "productType": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "OrganizerInGrouprequest": {
+                "type": "object",
+                "properties": {
+                    "organizerEmail": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "firstName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lastName": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "productType": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
