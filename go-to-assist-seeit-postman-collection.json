@@ -1,5 +1,5 @@
 {
-    "id": "09b7305a3acdf54d5abb06673ff563d7",
+    "id": "dffc259f90ea1b6d684678d2e4a5f410",
     "name": "Go To Assist Seeit",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "e3d8e17a69d6af2bad9549975735f8ea",
+            "id": "a292d66d00e09564793f58a9706986b0",
             "name": "Get details for multiple GoToAssist Seeit sessions",
             "url": "httpsapi.citrixonline.com\/seeit\/v1\/sessions",
             "description": "<p>This endpoint allows you to get all relevant details for mulitple GoToAssist Seeit sessions. Session details are available for 90 days.<\/p><\/p>The fields and their values in the response depend on session status and the time elapsed since session end; e.g. session data like snapshots or the session recording are only available for 72 hours.<\/p><p>The results will be paged, with paging customizable to match your requirements.<\/p>",
@@ -65,11 +65,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "09b7305a3acdf54d5abb06673ff563d7",
+            "collectionId": "dffc259f90ea1b6d684678d2e4a5f410",
             "rawModeData": ""
         },
         {
-            "id": "3a9e00b6c9ff3d34ae24be19a1fd3dc4",
+            "id": "0f774ec6dc9f85eb6d43fa29ec145c3b",
             "name": "Create a GoToAssist Seeit session",
             "url": "httpsapi.citrixonline.com\/seeit\/v1\/sessions",
             "description": "This endpoint allows you to create a GoToAssist Seeit session. The session logically exists but is not started until you open the returned startUrl in a suitable browser.",
@@ -88,11 +88,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "09b7305a3acdf54d5abb06673ff563d7",
+            "collectionId": "dffc259f90ea1b6d684678d2e4a5f410",
             "rawModeData": ""
         },
         {
-            "id": "fd55f2f5ef8cf92d36484bfd838a8b48",
+            "id": "ded65527dc166a31630e021358937ede",
             "name": "Get details for a single GoToAssist Seeit session",
             "url": "httpsapi.citrixonline.com\/seeit\/v1\/sessions\/{uuid}",
             "description": "<p>This endpoint allows you to get all relevant details for a single GoToAssist Seeit session. Session details are available for 90 days.<\/p><p>The fields and their values in the response depend on session status and the time elapsed since session end; e.g. session data like snapshots or the session recording are only available for 72 hours.<\/p>",
@@ -119,7 +119,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "09b7305a3acdf54d5abb06673ff563d7",
+            "collectionId": "dffc259f90ea1b6d684678d2e4a5f410",
             "rawModeData": ""
         }
     ]
