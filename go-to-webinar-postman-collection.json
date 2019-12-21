@@ -1,5 +1,5 @@
 {
-    "id": "63472762e119921092bc6455d6dbd5ef",
+    "id": "da477ef531d03000155210fecb9b9837",
     "name": "Go To Webinar",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "58e7e66994bbff8e050d32288f6117af",
+            "id": "e3dbf8e41bcd59307216f6fec77cea87",
             "name": "Get all webinars for an account",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/accounts\/{accountKey}\/webinars",
             "description": "Retrieves the list of webinars for an account within a given date range. __*Page*__ and __*size*__ parameters are optional. Default __*page*__ is 0 and default __*size*__ is 20. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
@@ -58,11 +58,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "81fb317ac24da233690dab25790d43ac",
+            "id": "bb8fe43f556d38dd1c3e50228d9039ce",
             "name": "Get historical webinars",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/historicalWebinars",
             "description": "Returns details for completed webinars for the specified organizer and completed webinars of other organizers where the specified organizer is a co-organizer.",
@@ -96,11 +96,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "25ad5742488b2b8cffb7cad898d6a14a",
+            "id": "e07d25577ffd6b7cf6ce31e32efd66d8",
             "name": "Get organizer sessions",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/sessions",
             "description": "Retrieve all completed sessions of all the webinars of a given organizer.",
@@ -134,11 +134,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "096e8af5cc132b6e6f090a87e71e57c7",
+            "id": "bfc3fc119ece90299c327df82e826032",
             "name": "Get upcoming webinars",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/upcomingWebinars",
             "description": "Returns webinars scheduled for the future for the specified organizer and webinars of other organizers where the specified organizer is a co-organizer.",
@@ -157,11 +157,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "110e1e101702412d86aca1879ed6eab5",
+            "id": "e86fe6addfab4ba9c190a903cfeffd79",
             "name": "Get all webinars",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars",
             "description": "Returns webinars scheduled for the future for a specified organizer.",
@@ -180,11 +180,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "ddce36631aab6653804724832ab3651b",
+            "id": "754f858a6bc077e3186b9d852c31dbc8",
             "name": "Create webinar",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars",
             "description": "Creates a single session webinar, a sequence of webinars or a series of webinars depending on the type field in the body: \"single_session\" creates a single webinar session, \"sequence\" creates a webinar with multiple meeting times where attendees are expected to be the same for all sessions, and \"series\" creates a webinar with multiple meetings times where attendees choose only one to attend. The default, if no type is declared, is single_session. A sequence webinar requires a \"recurrenceStart\" o",
@@ -211,11 +211,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "3516ec1c22bff880edf50a43c59ea84f",
+            "id": "1ae1c641f9585f693be453ed72236a27",
             "name": "Cancel webinar",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}",
             "description": "Cancels a specific webinar. If the webinar is a series or sequence, this call deletes all scheduled sessions. To send cancellation emails to registrants set sendCancellationEmails=true in the request. When the cancellation emails are sent, the default generated message is used in the cancellation email body.",
@@ -242,11 +242,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "165b0dd94b004fffff596692596e5fbf",
+            "id": "16289fd3a01f4030b52dc45ed7082352",
             "name": "Get webinar",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}",
             "description": "Retrieve information on a specific webinar. If the type of the webinar is 'sequence', a sequence of future times will be provided. Webinars of type 'series' are treated the same as normal webinars - each session in the webinar series has a different webinarKey. If an organizer cancels a webinar, then a request to get that webinar would return a '404 Not Found' error.",
@@ -265,11 +265,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "5146f7bbea7d9ae53284d5df4ab64ed4",
+            "id": "2cd1364e79eb2a61e3622a6cf4a9624b",
             "name": "Update webinar",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}",
             "description": "Updates a webinar. The call requires at least one of the parameters in the request body. The request completely replaces the existing session, series, or sequence and so must include the full definition of each as for the Create call. Set notifyParticipants=true to send update emails to registrants.",
@@ -303,11 +303,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "8a41e55de8f39249149ee790b612d934",
+            "id": "88398af8f5d91491d548618d8af2a8c7",
             "name": "Get attendees for all webinar sessions",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/attendees",
             "description": "Returns all attendees for all sessions of the specified webinar.",
@@ -326,11 +326,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "911c2da912348a81da32e88f39f8ae3c",
+            "id": "fd54bf8da8d812d6e5b664359ae98eca",
             "name": "Get audio information",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/audio",
             "description": "Retrieves the audio\/conferencing information for a specific webinar.",
@@ -349,11 +349,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "3c0bdf64f9805a98c466e82344d8f908",
+            "id": "3d63ba02f644b4156678bd8ce7794384",
             "name": "Update audio information",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/audio",
             "description": "Updates the audio\/conferencing settings for a specific webinar",
@@ -387,11 +387,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "86ba18c2dc32f6a609e03ac2a7bcfb95",
+            "id": "2e215cf0155947bbb00bb101e6dd962c",
             "name": "Get co-organizers",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/coorganizers",
             "description": "Returns the co-organizers for the specified webinar. The original organizer who created the webinar is filtered out of the list. If the webinar has no co-organizers, an empty array is returned. Co-organizers that do not have a GoToWebinar account are returned as external co-organizers. For those organizers no surname is returned.",
@@ -410,11 +410,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "f9cceadbe41ec2b1382bcc2139eaa97a",
+            "id": "bd53862fba1b56c4e37ae7d527f8218c",
             "name": "Create co-organizers",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/coorganizers",
             "description": "Creates co-organizers for the specified webinar. For co-organizers that have a GoToWebinar account you have to set the parameter 'external' to 'false'. In this case you have to pass the parameter 'organizerKey' only. For co-organizers that have no GoToWebinar account you have to set the parameter 'external' to 'true'. In this case you have to pass the parameters 'givenName' and 'email'. Since there is no parameter for 'surname' you should pass first and last name to the parameter 'givenName'.",
@@ -441,11 +441,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "274642574ac29817212adefc93bfcfcb",
+            "id": "c14ed973568cd09c3c0bb95b52cfbe4f",
             "name": "Delete co-organizer",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/coorganizers\/{coorganizerKey}",
             "description": "Deletes an internal co-organizer specified by the coorganizerKey (memberKey).",
@@ -472,11 +472,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "96ffdf2e5273def9bd5cea9c772df0ea",
+            "id": "9c67bd9b188f931577c2d07208305d18",
             "name": "Resend invitation",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/coorganizers\/{coorganizerKey}\/resendInvitation",
             "description": "Resends an invitation email to the specified co-organizer",
@@ -503,11 +503,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "9bf606604f130d6bebf0f84a27e5efb6",
+            "id": "10c087a4a1654a510b08aa69a216cc49",
             "name": "Get webinar meeting times",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/meetingtimes",
             "description": "Retrieves the meeting times for a webinar.",
@@ -526,11 +526,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "b46e64764a5d84e3ef7603c547304ceb",
+            "id": "f899538a32f4564b11bcbb6e24a02c95",
             "name": "Get webinar panelists",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/panelists",
             "description": "Retrieves all the panelists for a specific webinar.",
@@ -549,11 +549,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "c003b3be6b63cf5aa2f698201815c072",
+            "id": "8b013936feec5d48efeb3c456beac06e",
             "name": "Create Panelists",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/panelists",
             "description": "Create panelists for a specified webinar",
@@ -580,11 +580,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "735268aaebec9961d088167efe739cd9",
+            "id": "03735933258da7f299b7accc5de80ec7",
             "name": "Delete webinar panelist",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/panelists\/{panelistKey}",
             "description": "Removes a webinar panelist.",
@@ -603,11 +603,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "a695cb47738dde05801832db166102b3",
+            "id": "8ba0fddb95d80c8384886f5e83cee552",
             "name": "Resend panelist invitation",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/panelists\/{panelistKey}\/resendInvitation",
             "description": "Resend the panelist invitation email.",
@@ -626,11 +626,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "9ddf8dc7792792bb2df49491455e79c8",
+            "id": "ef3e9f9b1bd3b49ce7ca74c791c2f7cf",
             "name": "Get performance for all webinar sessions",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/performance",
             "description": "Gets performance details for all sessions of a specific webinar.",
@@ -649,11 +649,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "ac4299b4cd9165a1f55126ebf9ebf44d",
+            "id": "4af894603c1a3e9d37bcffc4f1d3168b",
             "name": "Get registrants",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/registrants",
             "description": "Retrieve registration details for all registrants of a specific webinar. Registrant details will not include all fields captured when creating the registrant. To see all data, use the API call 'Get Registrant'. Registrants can have one of the following states; <br>WAITING - registrant registered and is awaiting approval (where organizer has required approval), <br>APPROVED - registrant registered and is approved, and <br>DENIED - registrant registered and was denied.",
@@ -672,11 +672,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "565a09ea47f7947b7755bb19056834b0",
+            "id": "b2dc6898fbafa26670d7c34a65bef800",
             "name": "Create registrant",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/registrants",
             "description": "Register an attendee for a scheduled webinar. The response contains the registrantKey and join URL for the registrant. An email will be sent to the registrant unless the organizer turns off the confirmation email setting from the GoToWebinar website. Please note that you must provide all required fields including custom fields defined during the webinar creation. Use the API call 'Get registration fields' to get a list of all fields, if they are required, and their possible values. At this time ",
@@ -717,11 +717,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "a1807edf0fd511ae37ee82ff35bf0fdb",
+            "id": "228341e88317c888379ef930f376a18d",
             "name": "Get registration fields",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/registrants\/fields",
             "description": "Retrieve required, optional registration, and custom questions for a specified webinar.",
@@ -740,11 +740,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "3dcb5958ffea1b7a42c745415e472740",
+            "id": "a1f89811c9dacc528cf27e54b8d85223",
             "name": "Delete registrant",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/registrants\/{registrantKey}",
             "description": "Removes a webinar registrant from current registrations for the specified webinar. The webinar must be a scheduled, future webinar.",
@@ -763,11 +763,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "4c5a3fe04a0371bb4ef7554903f2e121",
+            "id": "7a5d32039c37c12f89d3a5b9a4d03f89",
             "name": "Get registrant",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/registrants\/{registrantKey}",
             "description": "Retrieve registration details for a specific registrant.",
@@ -786,11 +786,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "d3b468599d213c6c878a8b50414ff754",
+            "id": "626e309c7d0b49d9752683480f33d264",
             "name": "Get webinar sessions",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions",
             "description": "Retrieves details for all past sessions of a specific webinar.",
@@ -809,11 +809,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "407fa8b0f8ee2c57dc6c2c7b78216999",
+            "id": "c06c91a98bf799714790c284ac4534d5",
             "name": "Get webinar session",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}",
             "description": "Retrieves attendance details for a specific webinar session that has ended. If attendees attended the session ('registrantsAttended'), specific attendance details, such as attendenceTime for a registrant, will also be retrieved. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
@@ -832,11 +832,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "22d4d28de84f3ddacce3bd176a2a9ea1",
+            "id": "d6838890a7f3f1e8658ba57cf460f7ab",
             "name": "Get session attendees",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees",
             "description": "Retrieve details for all attendees of a specific webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
@@ -855,11 +855,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "1ca83413bf68ef85d5d29dbe5eb61ccc",
+            "id": "f9601a4d8f74f646b4ef4123d0e8a067",
             "name": "Get attendee",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees\/{registrantKey}",
             "description": "Retrieve registration details for a particular attendee of a specific webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
@@ -878,11 +878,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "5d725fdb24f18a31de6228c1b2fe4554",
+            "id": "abc6d4f41f5b31810905183c3ed0511d",
             "name": "Get attendee poll answers",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees\/{registrantKey}\/polls",
             "description": "Get poll answers from a particular attendee of a specific webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
@@ -901,11 +901,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "8ea192fe639251f6e65dc31e1ee53d3a",
+            "id": "e82d633ff5459e7e0d39d183eea7c4c9",
             "name": "Get attendee questions",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees\/{registrantKey}\/questions",
             "description": "Get questions asked by an attendee during a webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
@@ -924,11 +924,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "d6b13f88a632373f7c28f8ed2a57b7e6",
+            "id": "db55b816563846743607a53299285c75",
             "name": "Get attendee survey answers",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/attendees\/{registrantKey}\/surveys",
             "description": "Retrieve survey answers from a particular attendee during a webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
@@ -947,11 +947,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "522e2652873a597e0ba5ea97c9450204",
+            "id": "e305c197cdcff1c86d53538a1045642b",
             "name": "Get session performance",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/performance",
             "description": "Get performance details for a session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
@@ -970,11 +970,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "12395654b8a2cb3795aac1fdb920f06d",
+            "id": "3c76fad39f9401699c4ba4590b21a994",
             "name": "Get session polls",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/polls",
             "description": "Retrieve all collated attendee questions and answers for polls from a specific webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
@@ -993,11 +993,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "4ee692307a32f633a8678a258c7bceaf",
+            "id": "345f0472898c9a2fcd65624163c9ae75",
             "name": "Get session questions",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/questions",
             "description": "Retrieve questions and answers for a past webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
@@ -1016,11 +1016,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         },
         {
-            "id": "64ab21f1e6c00b3e004c82f8e637a5ee",
+            "id": "1358a87d239d796c2c48e352dc83d130",
             "name": "Get session surveys",
             "url": "httpsapi.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars\/{webinarKey}\/sessions\/{sessionKey}\/surveys",
             "description": "Retrieve surveys for a past webinar session. For technical reasons, this call cannot be executed from this documentation. Please use the curl command to execute it.",
@@ -1039,7 +1039,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "63472762e119921092bc6455d6dbd5ef",
+            "collectionId": "da477ef531d03000155210fecb9b9837",
             "rawModeData": ""
         }
     ]
