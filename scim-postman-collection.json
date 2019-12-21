@@ -1,5 +1,5 @@
 {
-    "id": "a2fba1d2a1f12a2238613417c0474d77",
+    "id": "ab936f22394280ad688d530281faf27f",
     "name": "SCIM",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "5a67524ab71fb837b71d604376d1d55f",
+            "id": "d0e939a6712590abe141dfd18293fd8f",
             "name": "Get Groups",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Groups",
             "description": "Queries multiple group identities in the organization domain. Filtering, sorting and pagination are available. This call requires the role ROLE_ORG_READ.",
@@ -37,11 +37,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "a7f5a1ecec43999611c617dd3c32f86c",
+            "id": "20b417e8f4e45925931e250ffe9f8888",
             "name": "Create Group",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Groups",
             "description": "Creates a new organization group and adds it to the user domain. Member groups and member users must be in the organization. This call requires the role ROLE_ORG_WRITE.",
@@ -68,11 +68,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "073476c9554caae3d8e1b1ecf01da792",
+            "id": "355a34c5dfd5021526cd092a5d2936a4",
             "name": "Delete Group",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Groups\/{groupKey}",
             "description": "Deletes a group from the organization (but not from the account). The group must be in the organization. This call requires the role ROLE_ORG_WRITE.",
@@ -91,11 +91,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "2b739b6d1a6bde0d9773e7c2f231ddca",
+            "id": "20ae8e740098b3a050f6adab23e453b3",
             "name": "Get Group",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Groups\/{groupKey}",
             "description": "Queries group details in the organization domain. This call requires the role ROLE_ORG_READ.",
@@ -114,11 +114,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "5a4e63ee33d359a35340aec375c226c9",
+            "id": "56397b9450007614359256f0acb018c4",
             "name": "Update Group",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Groups\/{groupKey}",
             "description": "Updates one or more values of an existing group without sending the full definition. Member groups and member users must be in the organization. This call requires the role ROLE_ORG_WRITE.",
@@ -145,11 +145,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "2b5d005f935532507690af13930d9c13",
+            "id": "55980b1f3efe6daad24f0a6d7535b2b0",
             "name": "Replace Group",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Groups\/{groupKey}",
             "description": "Updates an existing group. The request must include the full group definition. To modify one or more values without sending the full definition, see \"Update Group\". Member groups and member users must be in the organization. This call requires the role ROLE_ORG_WRITE.",
@@ -176,11 +176,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "0182606bbeaa9ecdec79203e13532797",
+            "id": "a1f165be32c5e4f444a11ea3f0eef5ff",
             "name": "Get User Schema",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Schemas\/Users",
             "description": "Queries the user schema. The user schema is defined in SCIM Core Schema (http:\/\/www.simplecloud.info\/specs\/draft-scim-core-schema-01.html#resource-schema).",
@@ -199,11 +199,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "43127ee4bf26b6b9e771eaba0e7524ae",
+            "id": "bb91e92504e3a49e10c46a4cec6fc3f0",
             "name": "Get Service Provider Configurations",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/ServiceProviderConfigs",
             "description": "Queries service provider configurations. The service provider configurations are defined in SCIM Core Schema (http:\/\/www.simplecloud.info\/specs\/draft-scim-core-schema-01.html#anchor6). This call returns a description, a documentationURL, name, and specURL.",
@@ -222,11 +222,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "d07c30624447b6305a2208ab315d6c26",
+            "id": "584c215cadffc0a8e358ccc71f98b490",
             "name": "Get Users",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Users",
             "description": "Queries multiple user identities in the organization domain. Filtering is available.",
@@ -253,11 +253,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "321c89020414d95d5a9466476441de3e",
+            "id": "610445b7472631ffcfd037debcf1911e",
             "name": "Create User",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Users",
             "description": "Creates a new organization user and adds them to the user domain. The user email domain must match an existing organization email domain.",
@@ -284,11 +284,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "411fbd95a8616fb56856a2e15623a9e8",
+            "id": "90731ce1829b23f6b4db44675fdcf465",
             "name": "Get Current User",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Users\/me",
             "description": "Queries the identity of the current authenticated user.",
@@ -307,11 +307,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "5bb176d0c958fdef566bbe51be2e88b8",
+            "id": "ad6cfad3ba1401da0fd788096c6bc878",
             "name": "Update Current User",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Users\/me",
             "description": "Changes a limited set (or all if you choose) of the current authenticated user's data. The updated user email domain must be an existing organization email domain. ",
@@ -338,11 +338,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "206cbc8192f057f9e2d407eac7bbeefd",
+            "id": "07b83c95d0776daff341e6061a0ff6ff",
             "name": "Replace Current User",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Users\/me",
             "description": "Changes the current authenticated user's displayName, locale, timezone, username and password. The request must include the full user definition (to modify one or more values without sending the full definition, see Update User). The replaced user email domain must be an existing organization email domain. ",
@@ -369,11 +369,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "f054e7b01d2672c0bdfbd1ab4369f259",
+            "id": "a7355c1600467f79a25f7060f48304ec",
             "name": "Delete User",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Users\/{userKey}",
             "description": "Deletes a user from the organization (but not from the account).",
@@ -392,11 +392,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "a8f96630c65123c8b4c943f7f88cf9d8",
+            "id": "82968abcfbaadb393064b70aad253735",
             "name": "Get User",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Users\/{userKey}",
             "description": "Queries user identity in the organization domain.",
@@ -415,11 +415,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "8c0dd79989005df0988f2f0a9b0dd277",
+            "id": "0a4488ed5ebb04abaef8373465a42a96",
             "name": "Update User",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Users\/{userKey}",
             "description": "Changes a limited set (or all if you choose) of the user's data. The updated user email domain must be an existing organization email domain.",
@@ -446,11 +446,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         },
         {
-            "id": "9b9c2208c66e34a01c29a27b7b128d99",
+            "id": "69617d55f05534efcf9bbaa01506e38e",
             "name": "Replace User",
             "url": "httpsapi.citrixonline.com\/identity\/v1\/Users\/{userKey}",
             "description": "Changes an existing user's displayName, locale, timezone, username and password. The request must include the full user definition (to modify one or more values without sending the full definition, see Update User). The replaced user email domain must be an existing organization email domain.",
@@ -477,7 +477,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a2fba1d2a1f12a2238613417c0474d77",
+            "collectionId": "ab936f22394280ad688d530281faf27f",
             "rawModeData": ""
         }
     ]
