@@ -1,5 +1,5 @@
 {
-    "id": "a64cf78e4f05a1581c50019dbbcb4f5b",
+    "id": "c4b0f2d8615ca0f1cbaca0a09433fec7",
     "name": "GoToWebinar REST API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "31ccf5da562946b0bc722eafae4e76ff",
+            "id": "62d1de8b9f0f3678b84c449b63a75010",
             "name": "Get historical webinars",
             "url": "http:\/\/api.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/historicalWebinars",
             "description": "Returns details for completed webinars for the specified organizer and completed webinars of other organizers where the specified organizer is a co-organizer.",
@@ -51,11 +51,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a64cf78e4f05a1581c50019dbbcb4f5b",
+            "collectionId": "c4b0f2d8615ca0f1cbaca0a09433fec7",
             "rawModeData": ""
         },
         {
-            "id": "adc97768c807073b81179dd36a0ea498",
+            "id": "79e904b1b429a8e260f735c5a99c54e6",
             "name": "Get organizer sessions",
             "url": "http:\/\/api.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/sessions",
             "description": "Retrieve all completed sessions of all the webinars of a given organizer.",
@@ -96,11 +96,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a64cf78e4f05a1581c50019dbbcb4f5b",
+            "collectionId": "c4b0f2d8615ca0f1cbaca0a09433fec7",
             "rawModeData": ""
         },
         {
-            "id": "a7d510ddf1bd0223ce932b4681de42f8",
+            "id": "a55d6b877dc3bbc89848b5715303b77b",
             "name": "Get upcoming webinars",
             "url": "http:\/\/api.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/upcomingWebinars",
             "description": "Returns webinars scheduled for the future for the specified organizer and webinars of other organizers where the specified organizer is a co-organizer.",
@@ -127,11 +127,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a64cf78e4f05a1581c50019dbbcb4f5b",
+            "collectionId": "c4b0f2d8615ca0f1cbaca0a09433fec7",
             "rawModeData": ""
         },
         {
-            "id": "1cb32bb251f6be7769d5710810131403",
+            "id": "5999e39395518335af796feed106c0c6",
             "name": "Get all webinars",
             "url": "http:\/\/api.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars",
             "description": "Returns webinars scheduled for the future for a specified organizer.",
@@ -158,11 +158,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a64cf78e4f05a1581c50019dbbcb4f5b",
+            "collectionId": "c4b0f2d8615ca0f1cbaca0a09433fec7",
             "rawModeData": ""
         },
         {
-            "id": "3e03ffd79bd674d9250121e447de7884",
+            "id": "32ded54ce78e0d7f0af38d6aa561ef78",
             "name": "Create webinar",
             "url": "http:\/\/api.citrixonline.com\/G2W\/rest\/organizers\/{organizerKey}\/webinars",
             "description": "Creates a single session webinar. The call requires an organizer, a webinar subject and description, and a start and end time. The response provides a numeric webinarKey in string format for the new webinar. Once a webinar has been created with this method, you can accept registrations.",
@@ -189,7 +189,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a64cf78e4f05a1581c50019dbbcb4f5b",
+            "collectionId": "c4b0f2d8615ca0f1cbaca0a09433fec7",
             "rawModeData": ""
         }
     ]
