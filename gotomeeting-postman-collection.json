@@ -1,5 +1,5 @@
 {
-    "id": "4d5f6d41c07da9ad06ed7197fdd053fe",
+    "id": "70fb93044a3608d4db1fc8c101e0a111",
     "name": "GoToMeeting",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "5a9c9a7868eabc6c2a37cc1beaefb218",
+            "id": "abc88f7f089d806a77733f8202023c23",
             "name": "Upcoming meetings by group",
             "url": "httpsapi.getgo.com\/G2M\/rest\/groups\/{groupKey}\/upcomingMeetings",
             "description": "Get upcoming meetings for a specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
@@ -51,11 +51,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "5ddb6cb220e540ffcf952c81b0db7a2d",
+            "id": "9f13093fd04df63fd3c853cd0bad6984",
             "name": "Organizer",
             "url": "httpsapi.getgo.com\/G2M\/rest\/organizers\/{organizerKey}",
             "description": "Gets the individual organizer specified by the organizer's email address. If an email address is not specified, all organizers are returned. This API call is only available to users with the admin role.",
@@ -96,11 +96,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "a637e8db9fc94fc7d1f2b763ecd67e88",
+            "id": "c16e46aed6c0d902848826867af3cfc7",
             "name": "Organizer",
             "url": "httpsapi.getgo.com\/G2M\/rest\/organizers\/{organizerKey}",
             "description": "Updates the products of the specified organizer. To add a product (G2M, G2W, G2T, OPENVOICE) for the organizer, the call must be sent once for each product you want to add. To remove all products for the organizer, set status to 'suspended'. The call is limited to users with the admin role.\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"firstName\"\t\t\t\"First\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"lastName\"\t\t\t\"Last\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"organizerEmail\"\t\t\t\"valid.org@email.com\"\t\t\tString ",
@@ -141,11 +141,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "68467c6d63e05f9d5b07014288cb8d4f",
+            "id": "413dbaa812e255dc282354af46df41ff",
             "name": "Organizer",
             "url": "httpsapi.getgo.com\/G2M\/rest\/organizers\/{organizerKey}",
             "description": "Deletes the individual organizer specified by the organizer key. This API call is only available to users with the admin role.",
@@ -186,11 +186,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "c65f2c3f1f91acd472c9cb23ee5bb513",
+            "id": "4f9e199c53f9aa01217db440e68fac37",
             "name": "Meeting",
             "url": "httpsapi.getgo.com\/G2M\/rest\/meetings",
             "description": "Create a new meeting based on the parameters specified.\r\n\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"subject\"\t\t\t\"subject\"\t\t\tString - max 100 char.\t\t\r\n\t\t\"starttime\"\t\t\t\"2019-05-10T12:00:00Z\"\t\t\t{YYYY}-{MM}-{DD}T{HH}:{MM}:{SS}Z format, UTC only\t\t\r\n\t\t\"endtime\"\t\t\t\"2019-05-10T13:00:00Z\"\t\t\t{YYYY}-{MM}-{DD}T{HH}:{MM}:{SS}Z format, UTC only\t\t\r\n\t\t\"passwordRequired\"\t\t\tFALSE\t\t\tBoolean: true, false\t\t\r\n\t\t\"conferencecallinfo\"\t\t\t\"hybrid\"\t\t\tMust be one of: Hybrid, PTSN, Free, Private, VoIP.\t\t\r\n\t\t\"timezoneke",
@@ -231,11 +231,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "68e7b9a2d4baa448d7ca573f31755b7c",
+            "id": "75e8a4dfb752ee139101c9631f1dcd31",
             "name": "Groups",
             "url": "httpsapi.getgo.com\/G2M\/rest\/groups",
             "description": "List all groups for an account. This API call is only available to users with the admin role.",
@@ -269,11 +269,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "cbbd4837e940cb64efb0c1871f861e53",
+            "id": "0f95654e37ed29a9fc8c19d0e5cffcd9",
             "name": "Organizer by email",
             "url": "httpsapi.getgo.com\/G2M\/rest\/organizers",
             "description": "Gets the individual organizer specified by the organizer's email address. If an email address is not specified, all organizers are returned. This API call is only available to users with the admin role.",
@@ -314,11 +314,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "d71422e5bbb1e84ff75855c6f215d21b",
+            "id": "11c3dec13bd52da0369b4aa260a8cd70",
             "name": "Organizer",
             "url": "httpsapi.getgo.com\/G2M\/rest\/organizers",
             "description": "Creates a new organizer and sends an email to the email address defined in the request. This API call is only available to users with the admin role. You may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType, to create organizers for those products. A G2W or G2T organizer will also have access to G2M.\r\n\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"firstName\"\t\t\t\"First\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"lastName\"\t\t\t\"Last\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"organizerEmail\"\t\t\t\"valid.org@em",
@@ -359,11 +359,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "03a9ad1e8e20bfcc482d67b99129df1e",
+            "id": "cefc872033ee9950b1fe44e0710b5d97",
             "name": "Organizer by email",
             "url": "httpsapi.getgo.com\/G2M\/rest\/organizers",
             "description": "Deletes the individual organizer specified by the email address. This API call is only available to users with the admin role.",
@@ -404,11 +404,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "0bc078f0236c73a8b77f31cc87e3e1c6",
+            "id": "e292ad1789c8d224fc487e646f546b62",
             "name": "Historical meetings",
             "url": "httpsapi.getgo.com\/G2M\/rest\/historicalMeetings",
             "description": "Get historical meetings for the currently authenticated organizer that started within the specified date\/time range. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
@@ -456,11 +456,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "9e35309a8650d649828afe12566461ec",
+            "id": "02dc7b2bde6cae79185120c5192a9955",
             "name": "Attendees by meeting",
             "url": "httpsapi.getgo.com\/G2M\/rest\/meetings\/{meetingInstanceKey}\/attendees",
             "description": "List all attendees for specified meetingId of historical meeting. The historical meetings can be fetched using 'Get historical meetings', 'Get historical meetings by organizer', and 'Get historical meetings by group'. For users with the admin role this call returns attendees for any meeting. For any other user the call will return attendees for meetings on which the user is a valid organizer.",
@@ -501,11 +501,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "c29f6a9db19500333451b425a31b5d0c",
+            "id": "6a9f1868aef44db202f1364f304725f5",
             "name": "Meeting link",
             "url": "httpsapi.getgo.com\/G2M\/rest\/meetings\/{meetingId}\/start",
             "description": "Returns a host URL that can be used to start a meeting. When this URL is opened in a web browser, the GoToMeeting client will be downloaded and launched and the meeting will start. The end user is not required to login to a client.",
@@ -546,11 +546,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "977bbeea077ead3491688b1b9f0b6765",
+            "id": "e866ea4c8e694177cb0147ffde937253",
             "name": "Attendees by organizer",
             "url": "httpsapi.getgo.com\/G2M\/rest\/organizers\/{organizerKey}\/attendees",
             "description": "Lists all attendees for all meetings within a specified date range for a specified organizer. This API call is only available to users with the admin role.",
@@ -605,11 +605,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "58f3d6868f4922f0f685e45ebef31eb2",
+            "id": "c0c5dfbff26666a3396cde8cdfb8569a",
             "name": "Organizers by group",
             "url": "httpsapi.getgo.com\/G2M\/rest\/groups\/{groupkey}\/organizers",
             "description": "Returns all the organizers within a specific group. This API call is only available to users with the admin role.",
@@ -650,11 +650,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "bd8cff2f6c5a0a554afe7b0d6954c106",
+            "id": "36da6b6389bd93faeba0a2d59ff60ad2",
             "name": "Organizer in group",
             "url": "httpsapi.getgo.com\/G2M\/rest\/groups\/{groupkey}\/organizers",
             "description": "Creates a new organizer and sends an email to the email address defined in request. This API call is only available to users with the admin role. You may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType variables, creating organizers for those products. A G2W or G2T organizer will also have access to G2M.\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"organizerEmail\"\t\t\t\"valid.org@email.com\"\t\t\tString with valid email syntax\t\t\r\n\t\t\"firstName\"\t\t\t\"First\"\t\t\tString - max 25 characters\t\t\r\n\t\t\"las",
@@ -702,11 +702,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "70ac4546b26f778df31ff70463a32961",
+            "id": "c3eadb8ec9c5a59cc9441207fc200e08",
             "name": "Meeting",
             "url": "httpsapi.getgo.com\/G2M\/rest\/meetings\/{meetingId}",
             "description": "Returns the meeting details for the specified meeting.",
@@ -747,11 +747,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "8d2d31da6869f7f77975e1ebe38576a7",
+            "id": "2a875ceceb4d8b919ce793fa5190c744",
             "name": "Meeting",
             "url": "httpsapi.getgo.com\/G2M\/rest\/meetings\/{meetingId}",
             "description": "Updates an existing meeting specified by meetingId.\r\n\r\n\t\t\t\t\t\t\t\t\t\t\r\n\t\tfield\t\t\tvalue\t\t\tdescription\t\t\r\n\t\t\"subject\"\t\t\t\"subject\"\t\t\tString - max 100 char.\t\t\r\n\t\t\"starttime\"\t\t\t\"2019-05-10T12:00:00Z\"\t\t\t{YYYY}-{MM}-{DD}T{HH}:{MM}:{SS}Z format, UTC only\t\t\r\n\t\t\"endtime\"\t\t\t\"2019-05-10T13:00:00Z\"\t\t\t{YYYY}-{MM}-{DD}T{HH}:{MM}:{SS}Z format, UTC only\t\t\r\n\t\t\"passwordRequired\"\t\t\tFALSE\t\t\tBoolean: true, false\t\t\r\n\t\t\"conferencecallinfo\"\t\t\t\"hybrid\"\t\t\tMust be one of: Hybrid, PTSN, Free, Private, VoIP.\t\t\r\n\t\t\"timezonekey\"\t\t",
@@ -799,11 +799,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "f2baa1576d58e574f5b24c15c2f68de0",
+            "id": "6b59fa159685a1a7358f07efc1c0dc9e",
             "name": "Meeting",
             "url": "httpsapi.getgo.com\/G2M\/rest\/meetings\/{meetingId}",
             "description": "Deletes the meeting identified by the meetingId.",
@@ -844,11 +844,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "606d289665b6813a7eb648ba26ebd04d",
+            "id": "f61cb950b9f8fd40df53d0784cc541c7",
             "name": "Attendees by group",
             "url": "httpsapi.getgo.com\/G2M\/rest\/groups\/{groupkey}\/attendees",
             "description": "Returns all attendees for all meetings within specified date range held by organizers within the specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
@@ -903,11 +903,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "905bab2a83316cf5c7d61e978dcc2e99",
+            "id": "b5ad0e45a1ae27fae9cc96726544c17c",
             "name": "Upcoming meetings",
             "url": "httpsapi.getgo.com\/G2M\/rest\/upcomingMeetings",
             "description": "Gets upcoming meetings for the current authenticated organizer.",
@@ -941,11 +941,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "c5e6d877c8edf82b29ec6ddf902b0198",
+            "id": "9c680c5dc22fe1b6dd4f8f374adc6f56",
             "name": "Historical meetings by organizer",
             "url": "httpsapi.getgo.com\/G2M\/rest\/organizers\/{organizerKey}\/historicalMeetings",
             "description": "Get historical meetings for the specified organizer that started within the specified date\/time range. Meetings which are still ongoing at the time of the request are not included in the result.",
@@ -1000,11 +1000,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         },
         {
-            "id": "a42773047a952747449c5398cbc81a16",
+            "id": "8914b576821ee85b462182b81c2038ee",
             "name": "Historical meetings by group",
             "url": "httpsapi.getgo.com\/G2M\/rest\/groups\/{groupkey}\/historicalMeetings",
             "description": "Get historical meetings for the specified group that started within the specified date\/time range. This API call is only available to users with the admin role. This API call is restricted to groups with a maximum of 50 organizers. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
@@ -1059,7 +1059,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "4d5f6d41c07da9ad06ed7197fdd053fe",
+            "collectionId": "70fb93044a3608d4db1fc8c101e0a111",
             "rawModeData": ""
         }
     ]
