@@ -13,8 +13,8 @@
         "relative data",
         "service api"
     ],
-    "created": "2019-12-19",
-    "modified": "2019-12-19",
+    "created": "2019-12-21",
+    "modified": "2019-12-21",
     "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/gotomeeting\/master\/apis.json",
     "specificationVersion": "0.14",
     "apis": [
@@ -28,11 +28,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/go-to-training-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/go-to-training.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/go-to-training.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/gotomeeting\/master\/go-to-training-openapi.json"
                 }
             ]
         },
@@ -46,11 +46,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/go-to-assist-seeit-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/go-to-assist-seeit.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/go-to-assist-seeit.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/gotomeeting\/master\/go-to-assist-seeit-openapi.json"
                 }
             ]
         },
@@ -64,11 +64,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/scim-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/scim.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/scim.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/gotomeeting\/master\/scim-openapi.json"
                 }
             ]
         },
@@ -82,11 +82,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/gotomeeting-rest-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/gotomeeting-rest-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/gotomeeting-rest-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/gotomeeting\/master\/gotomeeting-rest-api-openapi.json"
                 }
             ]
         },
@@ -100,11 +100,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/gotowebinar-rest-api-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/gotowebinar-rest-api.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/gotowebinar-rest-api.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/gotomeeting\/master\/gotowebinar-rest-api-openapi.json"
                 }
             ]
         },
@@ -118,11 +118,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/go-to-webinar-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/go-to-webinar.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/go-to-webinar.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/gotomeeting\/master\/go-to-webinar-openapi.json"
                 }
             ]
         },
@@ -136,11 +136,11 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/go-to-meeting-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/go-to-meeting.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/go-to-meeting.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/gotomeeting\/master\/go-to-meeting-openapi.json"
                 }
             ]
         },
@@ -154,17 +154,21 @@
             "properties": [
                 {
                     "type": "x-openapi",
-                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/gotomeeting-openapi.json"
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/gotomeeting.json"
                 },
                 {
                     "type": "x-openapi",
-                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/gotomeeting.json"
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/gotomeeting\/master\/gotomeeting-openapi.json"
                 }
             ]
         }
     ],
     "include": [],
     "x-common": [
+        {
+            "type": "APIs.json",
+            "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/apis.json"
+        },
         {
             "type": "Base",
             "url": "https:\/\/api.citrixonline.com"
