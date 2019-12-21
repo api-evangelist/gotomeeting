@@ -1,5 +1,5 @@
 {
-    "id": "92b2fb8d7824fed98354ef64c5e37ffb",
+    "id": "8b05901f92112f4dbd033f4ee4778c00",
     "name": "Go To Training",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "b98b0f71951e85ea0a7699400c4d977a",
+            "id": "d814b749e1324315f578a71460f8c086",
             "name": "DEPRECATED: Get Organizers",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/accounts\/{accountKey}\/organizers",
             "description": "DEPRECATED: Please use the Admin API call 'Get all users' instead. For details see https:\/\/developer.citrixonline.com\/get-all-users.",
@@ -37,11 +37,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "0742970218cab1eeb206a5ff8a8820f2",
+            "id": "d600a1a005ea1371bb376b29b80ed3a4",
             "name": "Get Trainings",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings",
             "description": "This call retrieves information on all scheduled trainings for a given organizer. The trainings are returned in the order in which they were created. Completed trainings are not included; ongoing trainings with past sessions are included along with the past sessions. If the organizer does not have any scheduled trainings, the response will be empty.",
@@ -60,11 +60,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "0b0cf09a34d497277106fd82e244655e",
+            "id": "8394d5c558cf1647a709dfcbea0bf9f0",
             "name": "Create Training",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings",
             "description": "Schedules a training of one or more sessions. The call requires a training's name, at least one start and end time, and optionally may include additional sessions, a description, additional organizers (presenters), and registration settings. You can only add organizers to a training if you have a multi-user account. Once a training has been created with this method, you can accept registrations to the training. Registration is for the entire training - all sessions. (The GoToTraining admin site ",
@@ -91,11 +91,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "babc4ef03ad481667993a69dd3bf31e6",
+            "id": "061bc278dc31fd4489641ed264747911",
             "name": "Delete Training",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings\/{trainingKey}",
             "description": "Deletes a scheduled or completed training. For scheduled trainings, it deletes all scheduled sessions of the training. For completed trainings, the sessions remain in the database. No email is sent to organizers or registrants, but when participants attempt to start or join the training, they are directed to a page that states: Training Not Found: The training you are trying to join is no longer available.",
@@ -114,11 +114,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "508feb3e8a01b80392f0269c7f0f18bc",
+            "id": "16172ca7bdfb1fc6d55a837fd7a55eee",
             "name": "Get Training",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings\/{trainingKey}",
             "description": "Uses the organizer key and training key to retrieve information on a scheduled training.",
@@ -137,11 +137,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "fc6daf330eb7bc80b44cb558727bc901",
+            "id": "173f122685d079421af928822ab63b5c",
             "name": "Get Management URL for Training",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/manageUrl",
             "description": "A request for a direct URL to the admin portal for a specific training. The request identifies the organizer and the training; the response provides a link the organizer can use to manage or launch the training in the admin portal. The training organizer will be required to log in. You can schedule and manage the training (e.g., add tests, polls and training materials) from the URL provided in the response.",
@@ -160,11 +160,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "fc5134922782002e859a2d68045cc50c",
+            "id": "864a90ee186d14f22fe8604290e54411",
             "name": "Update Training Name and Description",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/nameDescription",
             "description": "Request to update a scheduled training name and description.",
@@ -191,11 +191,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "473c9c10b248a454a66a01610f578084",
+            "id": "4be6154ceef8e4b5541975eff89928a9",
             "name": "Get Training Organizers",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/organizers",
             "description": "Retrieves organizer details for a specific training. This is only applicable to multi-user accounts with sharing enabled (co-organizers).",
@@ -214,11 +214,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "1fc2b7c7003eabada536e0eddf5fd708",
+            "id": "de99e32f5f70626bb11c720369d1ba99",
             "name": "Update Training Organizers",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/organizers",
             "description": "Replaces the co-organizers for a specific training. The scheduling organizer cannot be unassigned. Organizers will be notified via email if the notifyOrganizers parameter is set to true. Replaced organizers are not notified. This method is only applicable to multi-user accounts with sharing enabled (co-organizers).",
@@ -245,11 +245,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "fb040a49be2a101354023f520de0376c",
+            "id": "591ca429c16b4da52405f72471867df1",
             "name": "Get Training Registrants",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/registrants",
             "description": "Retrieves details on all registrants for a specific training. Registrants can be:<br>WAITING - registrant registered and is awaiting approval (where organizer has required approval)<br>APPROVED - registrant registered and is approved<br>DENIED - registrant registered and was not approved.<br><br>IMPORTANT: The registrant data caches are typically updated immediately and the data will be returned in the response. However, the update can take as long as two hours.",
@@ -268,11 +268,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "30b80b62487a67fd02e062a8cb0a81d3",
+            "id": "b6080ecdd2995a34bf9d7032071ea943",
             "name": "Register for Training",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/registrants",
             "description": "Registers one person, identified by a unique email address, for a training. Approval is automatic unless payment or approval is required. The response contains the Confirmation page URL and Join URL for the registrant. NOTE: If some registrants do not receive a confirmation email, the emails could be getting blocked by their email server due to spam filtering or a grey-listing setting.",
@@ -299,11 +299,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "ca73480c2592ea7b98b78479fdbabdbd",
+            "id": "9ae196f10ae5cae7cf141cc87c51e40f",
             "name": "Cancel Registration",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/registrants\/{registrantKey}",
             "description": "This call cancels a registration in a scheduled training for a specific registrant. If the registrant has paid for the training, a cancellation cannot be completed with this method; it must be completed on the external admin site. No notification is sent to the registrant or the organizer by default. The registrant can re-register if needed.",
@@ -322,11 +322,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "ced9bb735afd4664b115c5de6d8e1f3b",
+            "id": "cdb5a2817c3dfb0f96c6f30447287f9e",
             "name": "Get Registrant",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/registrants\/{registrantKey}",
             "description": "Retrieves details for specific registrant in a specific training. Registrants can be:<br>WAITING - registrant registered and is awaiting approval (where organizer has required approval)<br>APPROVED - registrant registered and is approved<br>DENIED - registrant registered and was not approved.<br><br>IMPORTANT: The registrant data caches are typically updated immediately and the data will be returned in the response. However, the update can take as long as two hours.",
@@ -345,11 +345,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "afac1eb8f0ca5e3eecd2973365d54209",
+            "id": "c995f43ba090ab39e6eb6bf064014a40",
             "name": "Update Training Registration Settings",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/registrationSettings",
             "description": "An API request to automatically enable or disable web registrations and confirmation emails to registrants.",
@@ -376,11 +376,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "d2d271f854ca8ab2aabd42959a3bb2a0",
+            "id": "a44f643a6a93f20a03708e873de87b9d",
             "name": "Get Start Url",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/startUrl",
             "description": "Returns a URL that can be used to start a training. When this URL is opened in a web browser, the GoToTraining client will be downloaded and launched and the training will start after the organizer logs in with its credentials.",
@@ -399,11 +399,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "5827ea3c8d3e04d58f7708766f973cb5",
+            "id": "2d3d0f5c13854048b0f7c3f9e99d0deb",
             "name": "Update Training Times",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/organizers\/{organizerKey}\/trainings\/{trainingKey}\/times",
             "description": " A request to update a scheduled training's start and end times. If the request contains 'notifyTrainers = true' and 'notifyRegistrants = true', both organizers and registrants are notified. The response provides the number of notified trainers and registrants.",
@@ -430,11 +430,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "30c6ac8d5649cd8aed767fcfa7efc04a",
+            "id": "2da592c87fcf35d94f8cc412acf77615",
             "name": "Get Sessions by Date Range",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/reports\/organizers\/{organizerKey}\/sessions",
             "description": "This call returns all session details over a given date range for a given organizer. A session is a completed training event.",
@@ -461,11 +461,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "3efbf260992d242fbc7ff081d077b03e",
+            "id": "3e9c2839bc168dc08bc2437e46a27d80",
             "name": "Get Attendance Details",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/reports\/organizers\/{organizerKey}\/sessions\/{sessionKey}\/attendees",
             "description": "This call retrieves a list of registrants from a specific completed training session. The response includes the registrants' email addresses, and if they attended, it includes the duration of each period of their attendance in minutes, and the times at which they joined and left. If a registrant does not attend, they appear at the bottom of the listing with timeInSession = 0.",
@@ -492,11 +492,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "4b112e78a2b74747b94216111bf95e99",
+            "id": "0105852dc36cc4b76c31f027ec92155d",
             "name": "Get Sessions By Training",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/reports\/organizers\/{organizerKey}\/trainings\/{trainingKey}",
             "description": "This call returns session details for a given training. A session is a completed training event. Each training may contain one or more sessions.",
@@ -515,11 +515,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "3807d0250178c9cdd5d52c14dbcbfb98",
+            "id": "a74cb78fed63197bafa857e2bec94b79",
             "name": "Get Online Recordings for Training",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/trainings\/{trainingKey}\/recordings",
             "description": "This call retrieves information on all online recordings for a given training. If there are none, it returns an empty list.",
@@ -538,11 +538,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "5c4868e7d4891ec4104db28d6e6f4846",
+            "id": "49245c29f0f49d6b036238fb38d9890f",
             "name": "Get Download for Online Recordings",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/trainings\/{trainingKey}\/recordings\/{recordingId}",
             "description": "This call provides the download for the given recording by returning a 302 redirect to the original file.",
@@ -569,11 +569,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         },
         {
-            "id": "a6e8514c68de15561b2d87f8635bdde1",
+            "id": "998510a8009fb0a3ea4c8108839494c2",
             "name": "Start Training",
             "url": "httpsapi.citrixonline.com\/G2T\/rest\/trainings\/{trainingKey}\/start",
             "description": "Returns a URL that can be used to start a training. When this URL is opened in a web browser, the GoToTraining client will be downloaded and launched and the training will start. A login of the organizer is not required.",
@@ -592,7 +592,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "92b2fb8d7824fed98354ef64c5e37ffb",
+            "collectionId": "8b05901f92112f4dbd033f4ee4778c00",
             "rawModeData": ""
         }
     ]
