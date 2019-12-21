@@ -1,5 +1,5 @@
 {
-    "id": "3f30b2a453a3fa835988f3ed0cf00637",
+    "id": "d835c37e8f1a8768c5825dfd110f8ddd",
     "name": "GoToMeeting REST API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "d330d39de0031351bcd3378d0eb96838",
+            "id": "704b63e98d26fcae28cd82c32ca6826e",
             "name": "Get groups",
             "url": "http:\/\/api.citrixonline.com\/G2M\/rest\/groups",
             "description": "List all groups for an account. This API call is only available to users with the admin role.",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "3f30b2a453a3fa835988f3ed0cf00637",
+            "collectionId": "d835c37e8f1a8768c5825dfd110f8ddd",
             "rawModeData": ""
         },
         {
-            "id": "e66fb825246a33d0724b16c0c9b5cd91",
+            "id": "816d16d52721bd5920972f2b128d4610",
             "name": "Get attendees by group",
             "url": "http:\/\/api.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/attendees",
             "description": "Returns all attendees for all meetings within specified date range held by organizers within the specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
@@ -74,11 +74,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "3f30b2a453a3fa835988f3ed0cf00637",
+            "collectionId": "d835c37e8f1a8768c5825dfd110f8ddd",
             "rawModeData": ""
         },
         {
-            "id": "bf51684db86b3782dda15180e41176e3",
+            "id": "19d530266e9826aa30537e95fb3f6841",
             "name": "Get historical meetings by group",
             "url": "http:\/\/api.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/historicalMeetings",
             "description": "Get historical meetings for a specified group within a specified date range. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
@@ -119,11 +119,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "3f30b2a453a3fa835988f3ed0cf00637",
+            "collectionId": "d835c37e8f1a8768c5825dfd110f8ddd",
             "rawModeData": ""
         },
         {
-            "id": "932d962858055888c4068b63f4104e0a",
+            "id": "e5e9d755c3e8905bdb7f8b43ef37bbe5",
             "name": "DEPRECATED: Get historical meetings by group",
             "url": "http:\/\/api.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/meetings",
             "description": "DEPRECATED: Please use the new API calls \"Get historical meetings by group\" and \"Get upcoming meetings by group\". Get meetings for a specified group. Additional filters can be used to view only meetings within a specified date range. This API call is only available to users with the admin role.",
@@ -171,11 +171,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "3f30b2a453a3fa835988f3ed0cf00637",
+            "collectionId": "d835c37e8f1a8768c5825dfd110f8ddd",
             "rawModeData": ""
         },
         {
-            "id": "28100168b9d1a559f99e1e6ed4d251e8",
+            "id": "f783da24fd7d6c6f839fdfe607b92b4a",
             "name": "Get organizers by group",
             "url": "http:\/\/api.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/organizers",
             "description": "Returns all the organizers within a specific group. This API call is only available to users with the admin role.",
@@ -202,11 +202,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "3f30b2a453a3fa835988f3ed0cf00637",
+            "collectionId": "d835c37e8f1a8768c5825dfd110f8ddd",
             "rawModeData": ""
         },
         {
-            "id": "317e4ba00a8e02238c6ddf98f6da5ac3",
+            "id": "c580a43987fd7b29058af3410799e29c",
             "name": "Create organizer in group",
             "url": "http:\/\/api.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/organizers",
             "description": "Creates a new organizer and sends an email to the email address defined in request. This API call is only available to users with the admin role. You may also pass \"G2W\" or \"G2T\" or \"OPENVOICE\" as productType variables, creating organizers for those products. A G2W or G2T organizer will also have access to G2M.",
@@ -233,7 +233,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "3f30b2a453a3fa835988f3ed0cf00637",
+            "collectionId": "d835c37e8f1a8768c5825dfd110f8ddd",
             "rawModeData": ""
         }
     ]
