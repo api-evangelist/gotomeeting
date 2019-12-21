@@ -1,5 +1,5 @@
 {
-    "id": "8031bd22ceae7bd1d5e91983d27f8346",
+    "id": "7ec1152af6d5e04ffa57f6d297e359a4",
     "name": "Go To Meeting",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "06a57eb809733d9f6205cbe981924958",
+            "id": "8ed6993f4189d1feaedcfae7b682bd32",
             "name": "Get groups",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups",
             "description": "List all groups for an account. This API call is only available to users with the admin role.",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "f6088032d0ef08c4698197fc03aca1ed",
+            "id": "3ea1d9d668c229cb7619702c5825047f",
             "name": "Get attendees by group",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/attendees",
             "description": "Returns all attendees for all meetings within specified date range held by organizers within the specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
@@ -67,11 +67,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "f078407dac7bbf03e5dd1d1808c931b8",
+            "id": "5efb71b52082e85ed17a836d87674fea",
             "name": "Get historical meetings by group",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/historicalMeetings",
             "description": "Get historical meetings for the specified group that started within the specified date\/time range. This API call is only available to users with the admin role. This API call is restricted to groups with a maximum of 50 organizers. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
@@ -105,11 +105,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "2f52c5d19d3c2c15bc9d38c09a5ce0d4",
+            "id": "694687d7bbf07d9528edfa176d7dd074",
             "name": "DEPRECATED: Get historical meetings by group",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/meetings",
             "description": "DEPRECATED: Please use the new API calls 'Get historical meetings by group' and 'Get upcoming meetings by group'. Get meetings for a specified group. Additional filters can be used to view only meetings within a specified date range. This API call is only available to users with the admin role.",
@@ -150,11 +150,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "a01abda554b30a3adcef4a4423d52eed",
+            "id": "53b5c87cd97e68072848166814aedab4",
             "name": "Get organizers by group",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/organizers",
             "description": "Returns all the organizers within a specific group. This API call is only available to users with the admin role.",
@@ -173,11 +173,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "6dba7d2b72e7bc015fcd261125a98a86",
+            "id": "cf26b3a5f1894600ee10af2b7c4c3915",
             "name": "Create organizer in group",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/organizers",
             "description": "Creates a new organizer and sends an email to the email address defined in request. This API call is only available to users with the admin role. You may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType variables, creating organizers for those products. A G2W or G2T organizer will also have access to G2M.",
@@ -204,11 +204,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "92b9e3f3be8de55e1fbb688590e8f5eb",
+            "id": "17cad96955813056f540555ad713c6d9",
             "name": "Get upcoming meetings by group",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/groups\/{groupKey}\/upcomingMeetings",
             "description": "Get upcoming meetings for a specified group. This API call is only available to users with the admin role. This API call can be used only for groups with maximum 50 organizers.",
@@ -227,11 +227,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "2e0b44df5ca410adf755d7d52902c0be",
+            "id": "a470f3fd642be2c64d3d149831f7322a",
             "name": "Get historical meetings",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/historicalMeetings",
             "description": "Get historical meetings for the currently authenticated organizer that started within the specified date\/time range. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
@@ -265,11 +265,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "eaed696a7bd893492496afe082d08cf6",
+            "id": "cef20e9f6bbac989ae49a25cbf54ea31",
             "name": "DEPRECATED: Get historical meetings",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings",
             "description": "DEPRECATED: Please use the new API calls 'Get historical meetings' and 'Get upcoming meetings'.  Gets historical meetings for the current authenticated organizer. Requires date range for filtering results to only meetings within specified dates. History searches will contain the parameter 'meetingInstanceKey' which is used in conjunction with the call 'Get Attendees by Meeting' to get attendee information for a past meeting.",
@@ -310,11 +310,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "55d33581d7856506c0b7da72b468aa6a",
+            "id": "b3eec84004d7beadd17561f67e27b0b6",
             "name": "Create meeting",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings",
             "description": "Create a new meeting based on the parameters specified.",
@@ -341,11 +341,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "9cbc417133058bd61b2bca2bdee78410",
+            "id": "7080b3d79bb4d7ed0868976137458bd3",
             "name": "Delete meeting",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings\/{meetingId}",
             "description": "Deletes the meeting identified by the meetingId.",
@@ -364,11 +364,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "b5c32fbd4a42874d9a0d67ed1d1fc21b",
+            "id": "663752158add5c3dbc64be1ae34db5aa",
             "name": "Get meeting",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings\/{meetingId}",
             "description": "Returns the meeting details for the specified meeting.",
@@ -387,11 +387,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "6f30b40bbdecea97acc03c4c19659a6a",
+            "id": "1537dff8bbf037be4313036ba7b04f97",
             "name": "Update meeting",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings\/{meetingId}",
             "description": "Updates an existing meeting specified by meetingId.",
@@ -418,11 +418,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "38117d03af1a930ee0898dfa35b36cfc",
+            "id": "631c44d52470f1967000155f650b433c",
             "name": "Get attendees by meeting",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings\/{meetingId}\/attendees",
             "description": "List all attendees for specified meetingId of historical meeting. The historical meetings can be fetched using 'Get historical meetings', 'Get historical meetings by organizer', and 'Get historical meetings by group'. For users with the admin role this call returns attendees for any meeting. For any other user the call will return attendees for meetings on which the user is a valid organizer.",
@@ -449,11 +449,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "b9dc465633c39f3bb27ed00ec7f04cb3",
+            "id": "1942aa615715243cec0ed3f380397800",
             "name": "Start meeting",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/meetings\/{meetingId}\/start",
             "description": "Returns a host URL that can be used to start a meeting. When this URL is opened in a web browser, the GoToMeeting client will be downloaded and launched and the meeting will start. The end user is not required to login to a client.",
@@ -472,11 +472,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "5f5d2daa81163c461af47349041479e5",
+            "id": "3788f9e17251fd7e435f38cc9d203627",
             "name": "Delete organizer by email",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers",
             "description": "Deletes the individual organizer specified by the email address. This API call is only available to users with the admin role.",
@@ -503,11 +503,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "253fa28f29490a33243a6ed6a730fa40",
+            "id": "f838bb12c3733dc12740f3abd929a648",
             "name": "Get organizer by email \/ Get all organizers",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers",
             "description": "Gets the individual organizer specified by the organizer's email address. If an email address is not specified, all organizers are returned. This API call is only available to users with the admin role.",
@@ -534,11 +534,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "884a7e40fff0659186bb918981c06eea",
+            "id": "868781cb68db90f0a7377e3aee20eb55",
             "name": "Create organizer",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers",
             "description": "Creates a new organizer and sends an email to the email address defined in the request. This API call is only available to users with the admin role. You may also pass 'G2W' or 'G2T' or 'OPENVOICE' as productType variables, creating organizers for those products. A G2W or G2T organizer will also have access to G2M.",
@@ -565,11 +565,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "d1bd57dd9daa5b32edde167d71006bae",
+            "id": "8e933ce9bd82de9dd83682de95e04ad7",
             "name": "Delete organizer",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}",
             "description": "Deletes the individual organizer specified by the organizer key. This API call is only available to users with the admin role.",
@@ -588,11 +588,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "07a06dd5977abeff1b4b85eab62f18a8",
+            "id": "8c72064c17a6a9e2c9a09894cf785f01",
             "name": "Get organizer",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}",
             "description": "Returns the individual organizer specified by the key. This API call is only available to users with the admin role. Non-admin users can only make this call for their own organizerKey.",
@@ -611,11 +611,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "f97b7f862c986adaf8576a3fd8250893",
+            "id": "df7aefed56a8e9b180dcb1be18f0bc36",
             "name": "Update organizer",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}",
             "description": "Updates the products of the specified organizer. To add a product (G2M, G2W, G2T, OPENVOICE) for the organizer, the call must be sent once for each product you want to add. To remove all products for the organizer, set status to 'suspended'. The call is limited to users with the admin role.",
@@ -642,11 +642,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "602f5130f28e498c7f6c19e60ab9cac7",
+            "id": "3011cfd25bfa181e746523c3ea3c4241",
             "name": "Get attendees by organizer",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}\/attendees",
             "description": "Lists all attendees for all meetings within a specified date range for a specified organizer. This API call is only available to users with the admin role.",
@@ -680,11 +680,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "31217d72ae2ef9b31716a3ce906fd0da",
+            "id": "cc7efffff413c656c476c629f820cef9",
             "name": "Get historical meetings by organizer",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}\/historicalMeetings",
             "description": "Get historical meetings for the specified organizer that started within the specified date\/time range. Remark: Meetings which are still ongoing at the time of the request are NOT contained in the result array.",
@@ -718,11 +718,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "c12c51c5ab41ef8ce507375752bfa4e4",
+            "id": "4e0d490927be3e9a642ee30ec43357b6",
             "name": "DEPRECATED: Get meetings by organizer",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}\/meetings",
             "description": "DEPRECATED: Please use the new API calls 'Get historical meetings by organizer' and 'Get upcoming meetings by organizer'. Gets future (scheduled) or past (history) meetings for a specified organizer. Include 'history=true' and the past start and end dates in the URL to retrieve past meetings. Enter 'scheduled=true' (without dates) to get scheduled meetings.",
@@ -770,11 +770,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "9e243fc28cbf7b23ee1079f8ccf357f1",
+            "id": "e2c6ced22ec5c8d917a3c2afd1b70939",
             "name": "Get upcoming meetings by organizer",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/organizers\/{organizerKey}\/upcomingMeetings",
             "description": "Get upcoming meetings for a specified organizer. This API call is only available to users with the admin role.",
@@ -793,11 +793,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         },
         {
-            "id": "17db38cf56b05f016666a33a7529e5eb",
+            "id": "a4aa52fc8509034ebe30a45fac317108",
             "name": "Get upcoming meetings",
             "url": "httpsapi.citrixonline.com\/G2M\/rest\/upcomingMeetings",
             "description": "Gets upcoming meetings for the current authenticated organizer.",
@@ -816,7 +816,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8031bd22ceae7bd1d5e91983d27f8346",
+            "collectionId": "7ec1152af6d5e04ffa57f6d297e359a4",
             "rawModeData": ""
         }
     ]
